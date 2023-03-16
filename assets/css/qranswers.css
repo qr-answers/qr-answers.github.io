@@ -4,3 +4,10 @@
     width:'100%';
     padding: 8px
 }
+.halfz-image {
+    -ms-transform:scale(0.5) translate(-50%,-50%);
+    -moz-transform:scale(0.5) translate(-50%,-50%);
+    -o-transform:scale(0.5) translate(-50%,-50%);
+    -webkit-transform:scale(0.5) translate(-50%,-50%);
+    transform:scale(0.5) translate(-50%,-50%);
+}
