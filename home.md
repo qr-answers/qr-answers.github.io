@@ -1,6 +1,7 @@
 ---
 title: Home Tab
-layout: home
+layout: default
+nav_order: 2
 ---
 
 <div style="background-color: rgb(220,220,220); color: rgb(85,85,85); width:'100%'; padding: 8px">Recent Results</div>
