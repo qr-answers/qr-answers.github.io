@@ -1,0 +1,5 @@
+{
+    "markdown.styles": [
+        "./assets/css/qranswers.css"
+    ]
+}

@@ -1,7 +1,7 @@
 ---
-title: Home Tab
+title: Quick Start
 layout: default
-nav_order: 3
+nav_order: 2
 ---
 
 <div class="accordion-bar">Recent Results</div>
