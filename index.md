@@ -1,6 +1,9 @@
 ---
 title: Introduction
-layout: home
+layout: default
+nav_order: 1
+description: Introduction to using QR-Answers and QR-Contest
+permalink: /
 ---
 
 QR-Answers and QR-Contest are applications that allow you to publish a question where the answers are marked with QR codes.
