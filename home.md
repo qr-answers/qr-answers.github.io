@@ -13,5 +13,5 @@ Viewing Mode is used from a mobile device to allow you to test your contest with
 The default is for your device to record votes after you scan a QR code.  To test your QR codes, you may select
 VIEW RESULTS to see how many votes have been cast, but your scan will not register as a vote.
 
-  <span style="color: #f000b4; font-size: 1.5em;"><i class="fa-solid circle-dot"></i></span>Set QR Scan Mode to RECORD votes from this device.<br/>
-  <span style="color: #f000b4; font-size: 1.5em;"><i class="fa-solid circle-dot"></i></span>Set QR Scan Mode to VIEW RESULTS from this device - responses will not be recorded.
+  <span style="color: #f000b4; font-size: 1.5em; margin-right: 4px;"><i class="fa-regular fa-circle-dot"></i></span>Set QR Scan Mode to RECORD votes from this device.<br/>
+  <span style="color: #f000b4; font-size: 1.5em; margin-right: 4px;"><i class="fa-regular fa-circle-dot"></i></span>Set QR Scan Mode to VIEW RESULTS from this device - responses will not be recorded.
