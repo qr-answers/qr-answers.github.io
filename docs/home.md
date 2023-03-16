@@ -9,6 +9,8 @@ nav_order: 2
   results to display.  Results are shown in graphical format (pie chart, bar chart, etc.).  You may go to the Results bottom tab to 
   see all of your contest's results.
 
+![](../../assets/images/tab_results.png)
+
 <div style="background-color: rgb(220,220,220); color: rgb(85,85,85); width:'100%'; padding: 8px">Viewing Mode</div>
 Viewing Mode is used from a mobile device to allow you to test your contest without registering any votes.  
 The default is for your device to record votes after you scan a QR code.  To test your QR codes, you may select
