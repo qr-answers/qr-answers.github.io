@@ -1,7 +1,6 @@
 ---
 title: Home Tab
-description: Home screen functionality
-link: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
+layout: home
 ---
 
 <div style="background-color: rgb(220,220,220); color: rgb(85,85,85); width:'100%'; padding: 8px">Recent Results</div>
