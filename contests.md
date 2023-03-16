@@ -1,7 +1,7 @@
 ---
 title: Contests Tab
 layout: default
-nav_order: 2
+nav_order: 3
 ---
 
 The Contests tab is used to create or show your contests.  This is the starting point for you to create your contests.
