@@ -1,6 +1,6 @@
 ---
 title: Home Tab
-layout: default
+layout: home
 nav_order: 3
 ---
 

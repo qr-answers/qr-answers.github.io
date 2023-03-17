@@ -1,6 +1,6 @@
 ---
 title: Contests Tab
-layout: default
+layout: home
 nav_order: 4
 ---
 

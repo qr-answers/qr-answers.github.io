@@ -1,5 +1,6 @@
 {
     "markdown.styles": [
         "assets/css/qranswers.css"
-    ]
+    ],
+    "editor.dragAndDrop": false
 }
