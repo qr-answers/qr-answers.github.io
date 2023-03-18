@@ -4,4 +4,6 @@ layout: home
 nav_order: 5
 ---
 
-Help stuff
+![Help](../assets/images/tabbar_help.png)
+
+You're already reading it!

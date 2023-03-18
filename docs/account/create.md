@@ -11,7 +11,7 @@ nav_order: 1
 1. To create an account, go to <a href="https://app.qr-contest.com" target="_blank">https://app.qr-contest.com</a> and select Create Account in the top tab.
 
    ![Create Account](../../assets/images/create_account.png)
-2. Enter a Usename, Password, Email and your Name.  You are required to accept the <a href="https://qr-contest.com/tandc.html" target="_blank">Terms & Conditions</a> to use QR-Contests.
+2. Enter a Usename, Password, Email and your Name.  You are required to accept the <a href="https://qr-contest.com/tandc.html" target="_blank">Terms & Conditions</a> to use QR-Contest.
 
 3. To verify your account, you will receive an email from **no-reply@verficationemail.com** - which is an Amazon service - that contains your verification code, e.g.:
 

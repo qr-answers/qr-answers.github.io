@@ -4,6 +4,8 @@ layout: home
 nav_order: 3
 ---
 
+![Home](../assets/images/tabbar_home.png)
+
 <div class="accordion-bar">Recent Results</div>
   Selecting this section will allow you to see the latest results from your contest(s).  If nothing is shown, then there are no recent
   results to display.  Results are shown in graphical format (pie chart, bar chart, etc.).  You may go to the Results bottom tab to 
