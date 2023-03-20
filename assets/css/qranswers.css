@@ -20,6 +20,12 @@
     border-radius: 4px;
     white-space: nowrap;
 }
+.phone-link {
+    background-color: rgb(255,203,48);
+    border-radius: 1em;
+    padding: 4px 10px 4px 10px;
+    white-space: nowrap;
+}
 .halfz-image {
     -ms-transform:scale(0.5) translate(-50%,-50%);
     -moz-transform:scale(0.5) translate(-50%,-50%);
@@ -44,4 +50,7 @@
     width: 90%; 
     border: 2px
     solid grey;
+}
+.image-border {
+    border: 1px solid grey;
 }
