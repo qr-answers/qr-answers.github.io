@@ -8,8 +8,11 @@ nav_order: 3
 
 <div class="accordion-bar">Recent Results</div>
   Selecting this section will allow you to see the latest results from your contest(s).  If nothing is shown, then there are no recent
-  results to display.  Results are shown in graphical format (pie chart, bar chart, etc.).  You may go to the Results bottom tab to 
-  see all of your contest's results.
+  results to display.  Results are shown in graphical format (pie chart, bar chart, etc.).  
+
+  <img class="image-border" alt="Recent results" src="../../assets/images/recent_results.png">
+
+  You may go to the Results bottom tab to see all of your contest's results.
 
 <p align="center">
   <img width="72" src="../../assets/images/tab_results.png">
