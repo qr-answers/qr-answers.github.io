@@ -49,6 +49,8 @@ In the upper right corner of the Home tab is the 3 bar menu.  This menu allows y
 
   <img class="image-border" alt="home tab menu" src="../../assets/images/home_menu.png">
 
+Below are the sections after choosing **Edit Profile**.
+
 ### Change Password
 <div class="accordion-bar">Change Password</div>
 Your username will show at the top of the section, followed by a place to enter your old password and to enter your new password and confirm it.  Once you hit the <span class="inline-button">Update</span> button, your password will be reset.  If you forget your password, see the [Forgot Password](./account/signin#forgot-password) section.

@@ -44,7 +44,7 @@ To change the colors, click on the left color box for foreground or the right co
 
 <img class="image-border" alt="QR code color picker" src="../../../assets/images/qr_color_picker.png">
 
-To change the shape of the internal 'rectangles', use the left <span class="inline-icon-black"><i class="fa-solid fa-caret-left"></i></span> and right <span class="inline-icon-black"><i class="fa-solid fa-caret-right"></i></span>arrow buttons.
+To change the shape of the internal 'rectangles', use the left <span class="inline-icon-black"><i class="fa-solid fa-caret-left"></i></span> and right <span class="inline-icon-black"><i class="fa-solid fa-caret-right"></i></span> arrow buttons.
 
 <img class="image-border" alt="QR code internal shapes" src="../../../assets/images/qr_shape_picker.png">
 
