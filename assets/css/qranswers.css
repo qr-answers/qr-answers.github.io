@@ -2,7 +2,8 @@
     background-color: rgb(220,220,220);
     color: rgb(85,85,85);
     width:'100%';
-    padding: 8px
+    padding: 8px;
+    margin-top: 16px;
 }
 .inline-accordion {
     background-color: rgb(220,220,220);
@@ -46,6 +47,14 @@
     margin-right: 4px;
     margin-left: 4px;
 }
+.inline-icon-black {
+    color: #000000;
+    background-color: #ffffff; 
+    font-size: 1em; 
+    margin-right: 4px;
+    margin-left: 4px;
+}
+
 .screen-shot {
     width: 90%; 
     border: 2px
@@ -53,4 +62,8 @@
 }
 .image-border {
     border: 1px solid grey;
+}
+.form-label {
+    font-style: italic;
+    font-weight: 600;
 }

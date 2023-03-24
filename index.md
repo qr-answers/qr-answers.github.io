@@ -24,3 +24,5 @@ When you select the link, it will take you to a page that shows the recorded res
 <img class="image-border" alt="Responses" src="assets/images/response.jpeg" >
 
 To get started go to the [Quick Start](docs/quickstart)
+
+As the creator of the contest, you are able to log into https://app.qr-contest.com and view the results for the most recent Contests on the home page or see all the results under the [Results](docs/results) bottom tab.
