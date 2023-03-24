@@ -5,13 +5,15 @@ nav_order: 4
 has_children: true
 ---
 
+# Contests Tab
+
 ![Contests](../assets/images/tabbar_contests.png)
 
 The Contests tab is used to create or show your contests.  This is the starting point for you to create your contests.
 
    <img class="image-border" alt="Contests tab, add contests" src="../../assets/images/contests_tab.png">
 
-You may choose the plus sign Add Contest to create a new Contest.  After clicking the plus sign, you enter the Contest name you would like
+You may choose the plus sign <span class="inline-icon"><i class="fa-solid fa-square-plus"></i></span> Add Contest to create a new Contest.  After clicking the plus sign, you enter the Contest name you would like
 to use in the empty text box.  Press tab or return to save the Contest name.  Next, click on the Contest name to take you to the details
 of the contest.  
 

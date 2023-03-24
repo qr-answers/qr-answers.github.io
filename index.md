@@ -19,7 +19,7 @@ Here is a simple question (you can follow the [Quick Start](docs/quickstart) to 
 
 <img class="image-border" alt="Answer scan" src="assets/images/answer_scan.jpeg">
 
-When you select the link, it will take you to a page that shows the recorded responses in graphical format (there are lots of choices for this page).  Done!
+When you select the link, it will take you to a page that shows your response (Lady Feathers) and all the recorded responses in graphical format (there are lots of choices for this page).  Done!
 
 <img class="image-border" alt="Responses" src="assets/images/response.jpeg" >
 

@@ -8,14 +8,14 @@ nav_order: 1
 # First Contest
 {: .no_toc }
 This section will show you how to create your first Contest with a single Question and 3 Answers.
-For QR-Contest, go to <a href="https://app.qr-contest.com" target="_blank">https://app.qr-contest.com</a> and log in.  If you have not created an account, go here [Creating an Account](../account)
+For QR-Contest, go to <a href="https://app.qr-contest.com" target="_blank">https://app.qr-contest.com</a> and log in.  If you have not created an account, go here [Creating an Account](../account) to learn how to sign up.
 
 ---
 
 1. Choose Contests in the bottom nav bar
 
    <img class="image-border" alt="Contests tab" src="../../assets/images/tab_contests.png">
-2. Press the plus sign Add Contest
+2. Press the plus sign <span class="inline-icon"><i class="fa-solid fa-square-plus"></i></span> Add Contest
 
    <img class="image-border" alt="Add contest" src="../../assets/images/add_contest.png">
 3. Enter the Contest name and press \<Enter\>
@@ -37,13 +37,13 @@ For QR-Contest, go to <a href="https://app.qr-contest.com" target="_blank">https
 7. Scroll down and click the Print/Download section accordion.
 
    <img class="image-border" alt="Print/Download" src="../../assets/images/chicken_printdl.png">
-8. You can make a PDF or individual PNG files; just scroll down and click <span class="inline-button">Make PDF</span>
+8. You can make a PDF or individual PNG files; just scroll down skipping the options and click <span class="inline-button">Make PDF</span>
 
    <img class="image-border" alt="Make PDF" src="../../assets/images/chicken_makepdf.png">
 9. Your PDF will be generated showing your Question and Answers.  
 
    <img class="image-border" alt="Download progress" src="../../assets/images/chicken_dlprogress.png">
-10. After it downloads, you can click on the name to print it or display it on your screen.
+10. After it downloads, you can click on the name to print it or display it on your screen.  You can also click the copy icon <span class="inline-icon"><i class="fa-regular fa-clone"></i></span> to copy the URL and paste it into another browser window/tab.
 
    <img class="image-border" alt="Contest name" src="../../assets/images/chicken_dlfinished.png">
 11. Now you can test your Contest Question by using your phone's camera and scan one of the QR code answers.  When the link appears, click it.  Done!  You're answer will be recorded and you will see the results.
@@ -51,3 +51,5 @@ For QR-Contest, go to <a href="https://app.qr-contest.com" target="_blank">https
 <p align="center" class="screen-shot">
 <img width="100%" src="../../../assets/images/chicken_pdf.png">
 </p>
+
+To see how to add photos to the answers, check out the next section: [Photo Answers](imageanswers)

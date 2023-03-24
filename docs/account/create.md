@@ -21,4 +21,4 @@ nav_order: 1
 
    <img class="image-border" alt="Verification entry" src="../../assets/images/verification_entry.png">
 
-5. Your account is now created.  To manage your account, go to the Home tab and choose the <span class="inline-icon-white"><i class="fa-regular fa-bars"></i></span> menu in the upper right, then [Edit Profile](../screens/edit_profile).
+5. Your account is now created.  To manage your account, go to the Home tab and choose the <span class="inline-icon"><i class="fa-solid fa-bars"></i></span> menu in the upper right, then [Edit Profile](../screens/edit_profile).
