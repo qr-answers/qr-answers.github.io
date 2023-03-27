@@ -57,15 +57,15 @@ The up/down arrows icon on the left of each Answer allows you to reorder the Ans
 
 
 #### Edit Answer
-You may edit the Answer details by pressing the pen <span class="inline-icon"><i class="fa-solid fa-pen"></i></span> icon to the left of the text.  You will get the Edit Answer form shown below.
+You may edit the Answer details by pressing the pencil <span class="inline-icon"><i class="fa-solid fa-pen"></i></span> icon to the left of the text.  You will get the Edit Answer form shown below.
 
    <img class="image-border" alt="edit answer details" src="../../assets/images/edit_answer.png">
 
-Answers may be either Text, Photo or both.  The default type is a Text answer.  You would enter the Answer in the Text Answer box.  If you would like to add a Photo to your Answer, check the Photo checkbox and then choose either <span class="inline-button">Enter URL</span>, <span class="inline-button">Upload</span> or <span class="inline-button">Take Photo</span>.  After completing your choice, the image will show up in the Image Preview area.  You may rotate your image by using the left <span class="inline-icon-black"><i class="fa-solid fa-rotate-left"></i></span> and right <span class="inline-icon-black"><i class="fa-solid fa-rotate-right"></i></span> rotate icons.  After you press the <span class="inline-button">Update</span> button, you will not be able to rotate the image, you will have to re-enter it to rotate it.
+Answers may be either <span class="form-label">Text</span>, <span class="form-label">Photo</span> or both.  The default type is a <span class="form-label">Text</span> answer.  You would enter the Answer in the <span class="form-label">Text Answer</span> box.  If you would like to add a Photo to your Answer, check the <span class="form-label">Photo</span> checkbox and then choose either <span class="inline-button">Enter URL</span>, <span class="inline-button">Upload</span> or <span class="inline-button">Take Photo</span>.  After completing your choice, the image will show up in the <span class="form-label">Image Preview</span> area.  You may rotate your image by using the left <span class="inline-icon-black"><i class="fa-solid fa-rotate-left"></i></span> and right <span class="inline-icon-black"><i class="fa-solid fa-rotate-right"></i></span> rotate icons.  After you press the <span class="inline-button">Update</span> button, you will not be able to rotate the image, you will have to re-enter it to rotate it.
 
 You may add <span class="form-label">Tags</span> that may be used in any Contest.  You add a tag by typing the tag value.  That will add the tag to your global tags.  If you have other tags, they will auto-complete as you start to type them.
 
-The <span class="form-label">Desription</span> area is for your own use.
+The <span class="form-label">Description</span> area is for your own use.
 
 #### Optional Answer Link
 <div class="inline-section">Optional Answer Link</div>
