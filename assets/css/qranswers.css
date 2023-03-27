@@ -77,3 +77,11 @@
     font-style: italic;
     font-weight: 600;
 }
+.inline-section {
+    background-color: #f000b4;
+    color: rgb(255,255,255);
+    padding: 8px;
+    margin-top: 16px;
+    width:'100%';
+    white-space: nowrap;
+}

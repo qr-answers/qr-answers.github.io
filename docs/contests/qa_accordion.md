@@ -61,4 +61,41 @@ You may edit the Answer details by pressing the pen <span class="inline-icon"><i
 
    <img class="image-border" alt="edit answer details" src="../../assets/images/edit_answer.png">
 
+Answers may be either Text, Photo or both.  The default type is a Text answer.  You would enter the Answer in the Text Answer box.  If you would like to add a Photo to your Answer, check the Photo checkbox and then choose either <span class="inline-button">Enter URL</span>, <span class="inline-button">Upload</span> or <span class="inline-button">Take Photo</span>.  After completing your choice, the image will show up in the Image Preview area.  You may rotate your image by using the left <span class="inline-icon-black"><i class="fa-solid fa-rotate-left"></i></span> and right <span class="inline-icon-black"><i class="fa-solid fa-rotate-right"></i></span> rotate icons.  After you press the <span class="inline-button">Update</span> button, you will not be able to rotate the image, you will have to re-enter it to rotate it.
+
+You may add <span class="form-label">Tags</span> that may be used in any Contest.  You add a tag by typing the tag value.  That will add the tag to your global tags.  If you have other tags, they will auto-complete as you start to type them.
+
+The <span class="form-label">Desription</span> area is for your own use.
+
+#### Optional Answer Link
+<div class="inline-section">Optional Answer Link</div>
+
+This option is very powerful.  You specify a link that will either show up on the Results page (after the user scans a QR code answer), or will automatically redirect the user to the Link.
+
+<span class="inline-icon"><i class="fa-regular fa-circle"></i></span> Link - Selecting this option will show a Link on the Results page.  The Text of the link (the highlighted text the user may click on) can be entered in the <span class="form-label">Link Text</span> box.  
+
+For example, if you would like to collect some demographic information, or have someone sign up for your newsletter after then scan the Answer, put "SignUp for Newsletter" as the <span class="form-label">Link Text</span> and enter the URL for your SignUp form in the <span class="form-label">Link URL</span>.  
+
+Below we show a sample where a voter scanned the QR code for the Model S and the <span class="form-label">Link Text</span> was "Model S" and the <span class="form-label">Link URL</span> was https://www.tesla.com/sites/default/files/tesla-model-s.pdf
+
+Results after scanning
+
+   <img class="image-border" alt="Tesla Model S Brochure" src="../../assets/images/tesla_s_text.png">
+
+
+<span class="inline-icon"><i class="fa-regular fa-circle"></i></span> Automatic Redirect - instead of showing the Results page, the user will be automatically redirected to the <span class="form-label">Link URL</span>.  The <span class="form-label">Link Text</span> is not used.  So, when the voter selects the QR code answer, the vote will be recorded and they will be redirected to the URL you put in the <span class="form-label">Link URL</span>. Clicking on the underlined Model S will take the voter to the Model S PDF file.
+
+This can be used in many ways; for example, let's say you wanted to distribute some documents.  Perhaps your "Question" would be:  **Download a spec sheet for?**   Then the answers would say *"Model S"*, *"Model X"*, *"Model Y"*.  Then, for each answer, you would select <span class="form-label">Automatic Redirect</span> and have the <span class="form-label">Link URL</span> go to https://www.tesla.com/sites/default/files/tesla-model-s.pdf for the Model S, etc.
+
+   <img class="image-border" alt="Tesla Model S" src="../../assets/images/model_s.png">
+
+PDF
+
+<p align="center" class="screen-shot">
+<img width="100%" src="../../assets/images/tesla_pdf.png">
+</p>
+
+Results after scanning
+
+   <img class="image-border" alt="Tesla Model S Brochure" src="../../assets/images/tesla_s_man.png">
 
