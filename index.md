@@ -15,6 +15,12 @@ QR-Answers and QR-Contest are different because the **answer** *is* the QR code.
 
  **QR-Answers** is for enterprise customers wishing to survey multiple projects and locations and is fully multi-user and collaborative.  **QR-Contest** is more consumer focused to allow you to have a fun way for people to vote for their favorite chilli in a cookoff, artwork on a wall, whether they were naughty or nice, etc.
 
+## Quick Start
+Here is a video with a brief walkthrough. 
+<video width="268" height="640" controls>
+  <source src="./assets/images/quickstart.mp4">
+</video>
+
 Here is a simple question (you can follow the [Quick Start](docs/quickstart) to see the full question) with a set of 3 answers.  You can see the first answer is scanned and shows a highlighted link <span class="phone-link"><span style="font-size: .5em; margin-right: 4px;"><i class="fa-solid fa-link"></i></span>qr-answers.com <span style="color: gray">></span></span>.
 
 <img class="image-border" alt="Answer scan" src="assets/images/answer_scan.jpeg">
