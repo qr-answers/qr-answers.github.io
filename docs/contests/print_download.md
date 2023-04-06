@@ -7,6 +7,7 @@ nav_order: 4
 
 {: .no_toc}
 
+<div class="sticky-right">
 <details open markdown="block">
   <summary>
     Table of contents
@@ -15,6 +16,7 @@ nav_order: 4
 - Table of Contents
 {: toc}
 </details>
+</div>
 
 <div class="accordion-bar">Print/Download</div>
 ## Print/Download

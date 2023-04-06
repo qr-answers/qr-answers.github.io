@@ -8,6 +8,7 @@ nav_order: 1
 # Contest Overview
 {: .no_toc}
 
+<div class="sticky-right">
 <details open markdown="block">
   <summary>
     Table of contents
@@ -16,6 +17,7 @@ nav_order: 1
 - Table of Contents
 {: toc}
 </details>
+</div>
 
 
 
