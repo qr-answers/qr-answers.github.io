@@ -86,14 +86,16 @@
     width:'100%';
     white-space: nowrap;
 }
-.sticky-right {
-    width: 300px;
-    position: fixed;
-    top: 60px;
-    right: 5px;
-    background-color: #EEF2F6;
-    z-index: 100;
-    border-radius: 8px;
-    border: 1px solid grey;
-    padding: 1em;
+@media (min-width: 50rem) {
+    .sticky-right {
+        width: 300px;
+        position: fixed;
+        top: 60px;
+        right: 5px;
+        background-color: #EEF2F6;
+        z-index: 100;
+        border-radius: 8px;
+        border: 1px solid grey;
+        padding: 1em;
+    }    
 }
