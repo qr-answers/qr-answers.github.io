@@ -8,7 +8,7 @@ nav_order: 2
 {: .no_toc}
 
 <div class="sticky-right">
-<details open markdown="block">
+<details markdown="block">
   <summary>
     Quick Links
   </summary>
@@ -26,12 +26,28 @@ nav_order: 2
    <img class="image-border" alt="add question, enter value" src="../../../assets/images/add_question2.png">
 </p>
 
+### First Contest
+  If this is your first Contest, you will see the plus sign <span class="inline-icon"><i class="fa-solid fa-square-plus"></i></span> Add Question item.  Click it to add your first question.
+
 {: .note}
-> If the plus sign <span class="inline-icon"><i class="fa-solid fa-square-plus"></i></span> Add Question does not appear, it is because you have already purchased this Contest and Question.  If this is the case, a small help icon will appear to the right of the paid for question reminding you that you cannot add or change this quesiton.  You may not add new Questions to an already launched contest.  However, it is possible to add new Answers to an already paid for Question.  Click the question and you will see the paid for answers with a lock next to them, but the plus sign <span class="inline-icon"><i class="fa-solid fa-square-plus"></i></span> Add Answer will be available.  You may add the new Answers and then go to the Pay and Launch accordion to pay for them. To add a new Question, create a new contest and add the question there.
+> If you return to this screen and the plus sign <span class="inline-icon"><i class="fa-solid fa-square-plus"></i></span> Add Question does not appear, it is because you have already purchased this Contest and Question.  If this is the case, a small help icon will appear to the right of the paid for question reminding you that you cannot add or change this quesiton.  You may not add new Questions to an already launched contest.  However, it is possible to add new Answers to an already paid for Question.  Click the question and you will see the paid for answers with a lock next to them, but the plus sign <span class="inline-icon"><i class="fa-solid fa-square-plus"></i></span> Add Answer will be available.  You may add the new Answers and then go to the Pay and Launch accordion to pay for them. To add a new Question, create a new contest and add the question there.
 
 <p align="center" class="screen-shot">
   <img class="image-border" alt="locked answers" src="../../../assets/images/locked_answer.png">
 </p>
+
+### Previous Contest Exists - Copy
+   If you created a previous contest, when you first go to a new contest, you will see the below interface - which allows you to do two things: 1) Copy Questions and Answers from a prior Contest; 2) Paste Questions and Answers from a spreadsheet that has a specific format.
+
+<p align="center" class="screen-shot">
+   <img class="image-border" alt="copy or paste questions and answers" src="../../../assets/images/copy_previous.png">
+</p>
+
+#### Copy Question(s) from other Contest
+   If you have prior Contests, and you are creating a brand new Contest, the first (and only first) time you go to add Questions to your new Contest, you will see a drop down with a list of your prior Contests.  You may copy those Questions (and Answers if you choose the Inlude Answers checkbox) into this Contest by selecting the Contest and choosing Copy.  You will see the Questions copied over to this Contest as new Questions.
+
+#### Paste Questions and Answers from Excel
+  Sometimes, it is easier to enter your Questions and Answers into a spreadsheet (maybe you already have some there) and then copying those and pasting them into the app.  You have to set up your spreadsheet exactly like the exmaple above.  The format is a Question in column A on a single line and the Answers in column B on subsequent lines.  You can copy/paste multiple questions by repeating the above pattern.  Select the 2 columns from Excel and choose copy (CTRL+C or CMD+C), then go back to the app page and press the Paste button (<strong>not</strong> CTRL+V or CMD+V).  That will paste your Questions and Answers into the app.
 
 ### Questions
 When you click the plus sign <span class="inline-icon"><i class="fa-solid fa-square-plus"></i></span> Add Question, a text box should appear for you to start typing into.  
@@ -40,7 +56,7 @@ When you click the plus sign <span class="inline-icon"><i class="fa-solid fa-squ
    <img class="image-border" alt="Contest name" src="../../assets/images/chicken_contest.png">
 </p>
 
-If it does not, you may also edit the Question text by pressing the Edit <span class="inline-icon"><i class="fa-solid fa-pen-to-square"></i></span> icon to the left of the text.  You will get the Edit Question form shown below.
+If it does not, you may also edit the Question text by pressing the Edit <span class="inline-icon"><i class="fa-solid fa-pen-to-square"></i></span> icon to the left of the text.  You will get the Edit Question form shown below.  Alternatively, long pressing the empty text area will also edit inline without the form.
 
 <p align="center" class="screen-shot">
    <img class="image-border" alt="Edit question form" src="../../assets/images/edit_question.png">
