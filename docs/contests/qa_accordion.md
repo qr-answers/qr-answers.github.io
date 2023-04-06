@@ -13,7 +13,7 @@ nav_order: 2
     Quick Links
   </summary>
   {: .text-delta }
-- QUICK LINKS
+- Quick Links
 {: toc}
 </details>
 </div>

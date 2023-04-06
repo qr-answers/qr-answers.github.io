@@ -9,10 +9,10 @@ nav_order: 5
 
 <details open markdown="block">
   <summary>
-    Table of contents
+    Quick Links
   </summary>
   {: .text-delta }
-- Table of Contents
+- Quick Links
 {: toc}
 </details>
 

@@ -10,10 +10,10 @@ nav_order: 3
 <div class="sticky-right">
 <details open markdown="block">
   <summary>
-    Table of contents
+    Quick Links
   </summary>
   {: .text-delta }
-- Table of Contents
+- Quick Links
 {: toc}
 </details>
 </div>

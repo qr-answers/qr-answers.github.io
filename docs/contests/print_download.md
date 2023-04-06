@@ -7,13 +7,16 @@ nav_order: 4
 
 {: .no_toc}
 
+<div class="sticky-gotop">
+<span class="inline-icon"><i class="fa-solid fa-arrow-up"></i></span>
+</div>
 <div class="sticky-right">
-<details open markdown="block">
+<details markdown="block">
   <summary>
-    Table of contents
+    Quick Links
   </summary>
   {: .text-delta }
-- Table of Contents
+- Quick Links
 {: toc}
 </details>
 </div>

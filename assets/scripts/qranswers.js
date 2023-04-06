@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    var details = document.querySelector("summary")
-    console.log(details);
+    var gotop = document.querySelector(".sticky-gotop")
 
-    details.addEventListener("click", function () {
-        console.log('toggle');
+    gotop.addEventListener("click", function () {
+        window.scrollTo(0,0);
     })
 });
