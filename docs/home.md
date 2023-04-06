@@ -11,14 +11,19 @@ toc_sticky: true
 ![Home](../assets/images/tabbar_home.png)
 {: .no_toc}
 
-<details open markdown="block">
+<div class="sticky-gotop">
+<span class="inline-icon"><i class="fa-solid fa-arrow-up"></i></span>
+</div>
+<div class="sticky-right">
+<details markdown="block">
   <summary>
-    Table of contents
+    Quick Links
   </summary>
   {: .text-delta }
-- Table of Contents
+- Quick Links
 {: toc}
 </details>
+</div>
 
 ## Recent Results
 <div class="accordion-bar">Recent Results</div>

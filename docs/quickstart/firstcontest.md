@@ -4,6 +4,9 @@ title: First Contest
 parent: Quick Start
 nav_order: 1
 ---
+<div class="sticky-gotop">
+<span class="inline-icon"><i class="fa-solid fa-arrow-up"></i></span>
+</div>
 
 # First Contest
 {: .no_toc }

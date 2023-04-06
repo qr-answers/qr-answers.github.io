@@ -8,8 +8,11 @@ nav_order: 5
 
 ![Results](../assets/images/tabbar_results.png)
 {: .no_toc}
-
-<details open markdown="block">
+<div class="sticky-gotop">
+<span class="inline-icon"><i class="fa-solid fa-arrow-up"></i></span>
+</div>
+<div class="sticky-right">
+<details markdown="block">
   <summary>
     Table of contents
   </summary>
@@ -17,6 +20,7 @@ nav_order: 5
 - Table of Contents
 {: toc}
 </details>
+</div>
 
 The Results tab is where you go to view the results of votes for your different Contests.  You will see a list of all Contests and the number of votes each has received.  The DRAFT votes are those that do not count towards the end totals.  They are the 'test' votes that were submitted.  The Active vote count shows the number of total votes for all Answers for a given Contest.  The text at the top of each rectangle is the Contest Name.  The text shown at the bottom of the rectangle is the <span class="form-label">Abbreviation</span> (if any), or a repeat of the Contest <span class="form-label">Name</span> from the [Contest edit form](./contests/contest_overview#contest-edit).  
 

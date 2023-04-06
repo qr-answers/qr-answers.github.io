@@ -5,6 +5,9 @@ nav_order: 1
 description: Introduction to using QR-Answers and QR-Contest
 permalink: /
 ---
+<div class="sticky-gotop">
+<span class="inline-icon"><i class="fa-solid fa-arrow-up"></i></span>
+</div>
 
 # QR-Answers.com and QR-Contest.com
 {: .no_toc }

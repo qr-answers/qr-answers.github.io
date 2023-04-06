@@ -4,6 +4,9 @@ title: Photo Answers
 parent: Quick Start
 nav_order: 2
 ---
+<div class="sticky-gotop">
+<span class="inline-icon"><i class="fa-solid fa-arrow-up"></i></span>
+</div>
 
 # Photo Answers
 {: .no_toc }
