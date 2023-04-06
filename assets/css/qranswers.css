@@ -100,21 +100,31 @@
     }    
 }
 .step-and-title {
-    display: flex; 
-    flex-direction: row; 
+    display: flex;
+    flex-direction: row;
     align-items: center;
 }
 .step-number {
-    display: grid;
+    flex-wrap: wrap;
+    flex: none;
+    flex-grow: 0;
+    display: flex;
     align-items: center;
     text-align: center;
-    padding: 0px;
+    flex-direction: column;
+    align-content: center;
     width: 32px;
     height: 32px;
+    padding: 0px;
     background: #121926;
     border-radius: 8px;
     color: white;
 }
+.snumber {
+    margin-top: auto;
+    margin-bottom: auto;
+}
 .step-title {
+    flex-grow: 0;
     margin-left: 8px;
 }
