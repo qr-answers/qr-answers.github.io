@@ -17,8 +17,9 @@
 .inline-button {
     background-color: #f000b4;
     color: rgb(255,255,255);
-    padding: 4px;
-    border-radius: 4px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    gap: 10px;
     white-space: nowrap;
 }
 .inline-header {
@@ -72,7 +73,6 @@
     padding: 1.5em;
 }
 .image-border {
-    border: 1px solid grey;
 }
 .form-label {
     font-style: italic;
@@ -98,4 +98,23 @@
         border: 1px solid grey;
         padding: 1em;
     }    
+}
+.step-and-title {
+    display: flex; 
+    flex-direction: row; 
+    align-items: center;
+}
+.step-number {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    padding: 0px;
+    width: 32px;
+    height: 32px;
+    background: #121926;
+    border-radius: 8px;
+    color: white;
+}
+.step-title {
+    margin-left: 8px;
 }
