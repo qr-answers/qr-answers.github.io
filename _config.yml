@@ -12,13 +12,13 @@ callouts:
     color: yellow
   important:
     title: Important
-    color: blue
+    color: purple
   new:
     title: New
     color: green
   note:
     title: Note
-    color: purple
+    color: blue
   warning:
     title: Warning
     color: red

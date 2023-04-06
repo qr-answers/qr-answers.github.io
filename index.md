@@ -17,17 +17,23 @@ QR-Answers and QR-Contest are different because the **answer** *is* the QR code.
 
 ## Quick Start
 Here is a video with a brief walkthrough. 
+<p align="center" class="screen-shot">
 <video width="268" height="640" controls>
   <source src="./assets/images/quickstart.mp4">
 </video>
+</p>
 
 Here is a simple question (you can follow the [Quick Start](docs/quickstart) to see the full question) with a set of 3 answers.  You can see the first answer is scanned and shows a highlighted link <span class="phone-link"><span style="font-size: .5em; margin-right: 4px;"><i class="fa-solid fa-link"></i></span>qr-answers.com <span style="color: gray">></span></span>.
 
+<p align="center" class="screen-shot">
 <img class="image-border" alt="Answer scan" src="assets/images/answer_scan.jpeg">
+</p>
 
 When you select the link, it will take you to a page that shows your response (Lady Feathers) and all the recorded responses in graphical format (there are lots of choices for this page).  Done!
 
+<p align="center" class="screen-shot">
 <img class="image-border" alt="Responses" src="assets/images/response.jpeg" >
+</p>
 
 To get started go to the [Quick Start](docs/quickstart)
 

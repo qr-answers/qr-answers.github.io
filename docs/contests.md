@@ -11,13 +11,17 @@ has_children: true
 
 The Contests tab is used to create or show your contests.  This is the starting point for you to create your contests.
 
+   <p align="center" class="screen-shot">
    <img class="image-border" alt="Contests tab, add contests" src="../../assets/images/contests_tab.png">
+   </p>
 
 You may choose the plus sign <span class="inline-icon"><i class="fa-solid fa-square-plus"></i></span> Add Contest to create a new Contest.  After clicking the plus sign, you enter the Contest name you would like
 to use in the empty text box.  Press tab or return to save the Contest name.  Next, click on the Contest name to take you to the details
 of the contest.  
 
+   <p align="center" class="screen-shot">
    <img class="image-border" alt="Contest details screen" src="../../assets/images/contest_screen.png">
+   </p>
 
 You may add Questions and Answers, then optionally Configure your Contest presentation, print sample output and ultimately
 pay for your Contest to go live.  See more [here](contests/contest_overview).
