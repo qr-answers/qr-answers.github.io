@@ -7,7 +7,12 @@ nav_order: 5
 
 {: .no_toc}
 
-<details open markdown="block">
+<div class="sticky-gotop">
+<span class="inline-icon"><i class="fa-solid fa-arrow-up"></i></span>
+</div>
+
+<div class="sticky-right">
+<details  markdown="block">
   <summary>
     Quick Links
   </summary>
@@ -15,6 +20,7 @@ nav_order: 5
 - Quick Links
 {: toc}
 </details>
+</div>
 
 
 <div class="accordion-bar">Pay and Launch</div>

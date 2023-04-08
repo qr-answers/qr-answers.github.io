@@ -5,6 +5,10 @@ nav_order: 4
 has_children: true
 ---
 
+<div class="sticky-gotop">
+<span class="inline-icon"><i class="fa-solid fa-arrow-up"></i></span>
+</div>
+
 # Contests Tab
 
 ![Contests](../assets/images/tabbar_contests.png)

@@ -8,8 +8,12 @@ nav_order: 1
 # Contest Overview
 {: .no_toc}
 
+<div class="sticky-gotop">
+<span class="inline-icon"><i class="fa-solid fa-arrow-up"></i></span>
+</div>
+
 <div class="sticky-right">
-<details open markdown="block">
+<details markdown="block">
   <summary>
     Quick Links
   </summary>
@@ -44,7 +48,7 @@ At the top of the screen, it will say <span class="inline-header">Contests - Act
 # Contest Detail Screen
 Clicking on the Contest name will open the Contest detail screen where you can add Questions and Answers as well as set properties (how many times can they vote? what color is my QR code, etc.).
 
-{: .note }
+{: .new }
 > Any time you have text in a list, you may long-press on it to edit the text inline.  This saves you steps from pressing the pencil and editing the text in a form.
 
 

@@ -14,7 +14,7 @@ callouts:
     title: Important
     color: purple
   new:
-    title: New
+    title: Recommendation
     color: green
   note:
     title: Note

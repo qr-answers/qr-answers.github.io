@@ -7,8 +7,12 @@ nav_order: 3
 
 {: .no_toc}
 
+<div class="sticky-gotop">
+<span class="inline-icon"><i class="fa-solid fa-arrow-up"></i></span>
+</div>
+
 <div class="sticky-right">
-<details open markdown="block">
+<details markdown="block">
   <summary>
     Quick Links
   </summary>

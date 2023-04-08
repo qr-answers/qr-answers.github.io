@@ -52,7 +52,7 @@ For QR-Contest, go to <a href="https://app.qr-contest.com" target="_blank">https
    <img class="image-border" alt="Enter question" src="../../assets/images/chicken_question.png">
    </p>
 
-{: .note }
+{: .new }
 > Any time you have text in a list, you may long-press on it to edit the text inline.  This saves you steps from pressing the pencil and editing the text in a form.
 
 <div class="step-and-title">

@@ -7,6 +7,10 @@ nav_order: 2
 
 {: .no_toc}
 
+<div class="sticky-gotop">
+<span class="inline-icon"><i class="fa-solid fa-arrow-up"></i></span>
+</div>
+
 <div class="sticky-right">
 <details markdown="block">
   <summary>
@@ -79,7 +83,7 @@ When you click the plus sign <span class="inline-icon"><i class="fa-solid fa-squ
    <img class="image-border" alt="Add answers" src="../../assets/images/chicken_answers.png">
 </p>
 
-{: .note }
+{: .new }
 > Any time you have text in a list, you may long-press on it to edit the text inline.  This saves you steps from pressing the pencil and editing the text in a form.
 
 #### Reorder Answers

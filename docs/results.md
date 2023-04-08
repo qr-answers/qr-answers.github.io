@@ -14,10 +14,10 @@ nav_order: 5
 <div class="sticky-right">
 <details markdown="block">
   <summary>
-    Table of contents
+    Quick Links
   </summary>
   {: .text-delta }
-- Table of Contents
+- Quick Links
 {: toc}
 </details>
 </div>
