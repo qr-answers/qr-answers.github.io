@@ -13,14 +13,14 @@ nav_order: 1
 {: .no_toc }
 
 <div class="step-and-title">
-<div class="step-number"><div class="snumber">1</div></div><div class="step-title">To create an account, go to <a href="https://app.qr-contest.com" target="_blank">https://app.qr-contest.com</a> and select Create Account in the top tab.</div>
+<div class="step-number"><div class="snumber">1</div></div><div class="step-title">To create an account, go to <a href="https://app.qr-contest.com" target="_blank">https://app.qr-answers.com</a> and select Create Account in the top tab.</div>
 </div>
 
    <p align="center" class="screen-shot">
    <img class="image-border" alt="Create account" src="../../assets/images/create_account.png">
    </p>
 <div class="step-and-title">
-<div class="step-number"><div class="snumber">2</div></div><div class="step-title">Enter a Usename, Password, Email and your Name.  You are required to accept the <a href="https://qr-contest.com/tandc.html" target="_blank">Terms & Conditions</a> to use QR-Contest.</div>
+<div class="step-number"><div class="snumber">2</div></div><div class="step-title">Enter a Usename, Password, Email and your Name.  You are required to accept the <a href="https://qr-contest.com/tandc.html" target="_blank">Terms & Conditions</a> to use QR-Answers.</div>
 </div>
 
 

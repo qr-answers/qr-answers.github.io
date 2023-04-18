@@ -24,7 +24,7 @@ nav_order: 5
 
 The Results tab is where you go to view the results of votes for your different Contests.  You will see a list of all Contests and the number of votes each has received.  The DRAFT votes are those that do not count towards the end totals.  They are the 'test' votes that were submitted.  The Active vote count shows the number of total votes for all Answers for a given Contest.  The text at the top of each rectangle is the Contest Name.  The text shown at the bottom of the rectangle is the <span class="form-label">Abbreviation</span> (if any), or a repeat of the Contest <span class="form-label">Name</span> from the [Contest edit form](./contests/contest_overview#contest-edit).  
 
-    <p align="center" class="screen-shot">
+   <p align="center" class="screen-shot">
    <img class="image-border" alt="All contest results" src="../../assets/images/results_all.png">
    </p>
 

@@ -143,3 +143,12 @@
     flex-grow: 0;
     margin-left: 8px;
 }
+.up-next {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    width: 30%;
+    background: #FEF6FB;
+    border-radius: 8px;
+}
