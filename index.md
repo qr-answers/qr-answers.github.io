@@ -67,5 +67,18 @@ Airport maintenance manager.  Create a Project for the Main Terminal.  Create Lo
 
 Simplest example would be to create a Project called "AdHoc Question", then create a fake Location called "Default" and then a single Question "How are you today?" with 2 answers - "Good", "Not Good".  Assign the Question to the "Default" Location and create a Campaign with a response limit of "Once" (meaning the voter can vote once - if they vote again, their vote is changed) and make the Campaign ACTIVE so people can scan to vote.
 
+## Text Entry
+When you add a Project, Question, Answer, Location or Campaign, you press a plus sign <span class="inline-icon"><i class="fa-solid fa-square-plus"></i></span> icon and then an inline textbox will appear like below. 
 
-As the creator of the Project, you (or those you have given access) are able to log into https://app.qr-answers.com and view the results for the most recently active Project on the home page or see all the results under the [Results](docs/results) bottom tab.
+   <p align="center" class="screen-shot">
+   <img class="image-border" alt="adding inline text" src="../../assets/images/inline_text.png">
+   </p>
+
+Type your text into the box and then press tab or enter.  That will save the text you entered.  Occassionally, it is possible that just a blank line is added and you won't see the text box
+
+   <p align="center" class="screen-shot">
+   <img class="image-border" alt="adding inline text" src="../../assets/images/inline_blank.png">
+   </p>
+
+ in this case long press (hold down your finger or mouse a little while) on the blank line and the text box will appear for you to type into. Alternatively, you may click on the edit pencil <span class="inline-icon"><i class="fa-solid fa-pen-to-square"></i></span> icon and it will take you to an edit screen to fill in the information.  It is far faster to use the 'long press' method to enter the text.
+

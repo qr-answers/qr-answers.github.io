@@ -1,7 +1,14 @@
 .accordion-bar {
     background-color: rgb(220,220,220);
     color: rgb(85,85,85);
-    width:'100%';
+    width: 100%;
+    padding: 8px;
+    margin-top: 16px;
+}
+.accordion-bar-qr {
+    background-color: #f000b4;
+    color: rgb(255,255,255);
+    width: 100%;
     padding: 8px;
     margin-top: 16px;
 }
