@@ -33,6 +33,14 @@ In the upper right corner of the Home tab is the 3 bar menu.  This menu allows y
 ### Edit Profile
 Below are the sections after choosing **Edit Profile**.
 
+#### Change Email
+<div class="accordion-bar">Change Email</div>
+Only you may change your email address.  If you are a member of some other person's Team, they will not be able to change your email address.  Your email address is not used by the other Team after you have accepted an invitation.  You are given an internal identifier that will follow you around, even if you change your email address.  You will be required to enter your old email address as well as your new one to change it.
+
+  <p align="center" class="screen-shot">
+  <img class="image-border" alt="change email" src="../../assets/images/change_email.png">
+  </p>
+
 #### Change Password
 <div class="accordion-bar">Change Password</div>
 Your username will show at the top of the section, followed by a place to enter your old password and to enter your new password and confirm it.  Once you hit the <span class="inline-button">Update</span> button, your password will be reset.  If you forget your password, see the [Forgot Password](./account/signin#forgot-password) section.
@@ -105,7 +113,7 @@ Below are the sections after choosing **Manage Plan**.
 
 #### Team Information
 <div class="accordion-bar">Team Information</div>
-The Team Information section shows who the billing contact is and when the subscription period started and renews.  This section also allows you (if you are the onwner or designated Administrator) to change the Team name.
+The Team Information section shows who the billing contact is and when the subscription period started and renews.  This section also allows you (if you are the owner or designated Administrator) to change the Team name.
 
   <p align="center" class="screen-shot">
   <img class="image-border" alt="team information screen" src="../../assets/images/team_name.png">

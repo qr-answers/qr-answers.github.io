@@ -51,7 +51,54 @@ nav_order: 2
    If you have prior Contests, and you are creating a brand new Contest, the first (and only first) time you go to add Questions to your new Contest, you will see a drop down with a list of your prior Contests.  You may copy those Questions (and Answers if you choose the Inlude Answers checkbox) into this Contest by selecting the Contest and choosing Copy.  You will see the Questions copied over to this Contest as new Questions.
 
 #### Paste Questions and Answers from Excel
-  Sometimes, it is easier to enter your Questions and Answers into a spreadsheet (maybe you already have some there) and then copying those and pasting them into the app.  You have to set up your spreadsheet exactly like the exmaple above.  The format is a Question in column A on a single line and the Answers in column B on subsequent lines.  You can copy/paste multiple questions by repeating the above pattern.  Select the 2 columns from Excel and choose copy (CTRL+C or CMD+C), then go back to the app page and press the Paste button (<strong>not</strong> CTRL+V or CMD+V).  That will paste your Questions and Answers into the app.
+  Sometimes, it is easier to enter your Questions and Answers into a spreadsheet (maybe you already have some there) and then copying those and pasting them into the app.  If you don't use column headers, you need to set up your spreadsheet exactly like the example above.  The format is a Question in column A on a single line and the Answers in column B on subsequent lines.  You can copy/paste multiple questions by repeating the above pattern.  Select the 2 columns from Excel and choose copy (CTRL+C or CMD+C), then go back to the app page and make sure the Question text edit box is active, press the Paste button (<strong>not</strong> CTRL+V or CMD+V).  That will paste your Questions and Answers into the app.
+
+  If you use column headers, you can copy/paste more information in varying formats.  Questions have 3 fields: text, tags and description.  Answers have 7 fields: text, tags, description, imageUrl, linkAction, linkDescription.  The explanation of these fields is below. You don't have to use all of the fields, but be sure to have a field named "text".  If you are only going to paste Questions with no Answers, you can use a spreadsheet with column headers of "text", "tags", "description" - like the below.  Copy the information from the spreadsheet, including the headers, then open a question text edit box and paste the information.  The app will figure out where to put everything for you. The below will create 2 questions. Here is a sample spreadsheet:
+
+<p align="center" class="screen-shot">
+   <img class="image-border" alt="copy/paste questions only" src="../../assets/images/cp_q_only.png">
+</p>
+
+
+  Note that tags are pipe \| delimited (the vertical bar).  If you would like to just paste Answers, you may use any of the fields above (be sure to include a column named "text").  Copy the area of the spreadsheet and open a text edit area for a new Answer; then paste the values.  The below will create 5 answers. Here is a sample spreadsheet:
+
+<p align="center" class="screen-shot">
+   <img class="image-border" alt="copy/paste answers only" src="../../assets/images/cp_a_only.png">
+</p>
+
+
+  Perhaps the easiest way to paste both Questions and Answers is to use a more clearly formatted header row.  Just put 'question.' in front of the Question fields or 'answer.' in front of the Answer fields.  For example, you could have  'question.text', 'answers.text' as the 2 columns, when you paste them, you will get Questions with the associated Answers when you paste the values into a question edit text box.  Leave blank values in the 'question.text' column where you have 'answers.text' values.  The below will create 2 questions.  The first question - "How are you today?" - will have 2 answers ("Fine" and "SoSo"); the second question - "What size?" - will have 3 answers ("Small", "Medium", "Large"). Here is a sample spreadsheet (right click it an open it in a new tab to be able to read it better):
+
+<p align="center" class="screen-shot">
+   <img class="image-border" alt="copy/paste full sample" src="../../assets/images/cp_full_spreadsheet.png">
+</p>
+
+The header fields listed above are:  "question.text", "question.tags", "question.description", "answer.text", "answer.tags", "answer.description", "answer.linkaction", "answer.link", "answer.linkdescription", "answer.imageurl".
+
+#### Question Fields
+
+**text** - This is the text that will display as the question.  Be sure to include the question mark if it is a question.  For example:  "How was your service today?"
+
+**tags** - These are used to help organize things.  To apply multiple tags, separate them with a vertical bar \| character.
+
+**description** - This can be used for you to keep any notes
+
+#### Answer Fields
+
+**text** - The text to display for the Answers.  If you leave this blank, then you **must** supply an imageUrl field.  Note that you can have **text** or **imageUrl** or both for your answer.  If you only supply an **imageUrl** then your answer will be displayed as the image.  If you supply only a **text** value, then your answer will only dispay the text.  If you supply both, your answer will display both the **text** and **imageUrl**
+
+**tags** - These are used to help organize things.  To apply multiple tags, separate them with a vertical bar \| character.
+
+**description** - To keep any notes
+
+**linkaction** - This has to be either 'embed' or 'redirect'.  Any other value will be ignored and dropped.  **embed** means to embed a hyperlink into the Answer results page.  So, after the user scans a QR code, they are presented a results page and on that page the embedded **link** will show up with the text of the link showing the **linkDesription** field below.  The hyperlink itself will be the **link** field as described below.  If you select **redirect**, then the linkDescription field is ignored and the user will not be taken to a results page, but will be automatically redirected to the **link** hyperlink.  The answer will be recorded, but the user will not see the aggregated results.
+
+**link** - See linkaction above.  This is either the hyperlink embedded on the results page or the link that the user us automatically redirected to if **linkaction** is **redirect**.  For example, you could put a link on the results page that goes to your website, or you can use redirect to automatically redirect the user to a survey or other location.
+
+**linkdescription** - This is the text of the hyperlinnk if **linkaction** is set to **embed**.  It is isgnored when **redirect** is chosen for **linkaction**.
+
+**imageurl** - This is a URL of an image that can be displayed as or along with your answer's **text** field.  See **text** above.
+
 
 ### Questions
 When you click the plus sign <span class="inline-icon"><i class="fa-solid fa-square-plus"></i></span> Add Question, a text box should appear for you to start typing into.  
