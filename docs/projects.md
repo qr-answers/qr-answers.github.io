@@ -194,7 +194,7 @@ When you generate a PDF, list of PNG files or Avery® labels, the Answers will s
   Sometimes, it is easier to enter your Questions and Answers into a spreadsheet (maybe you already have some there) and then copying those and pasting them into the app.  If you don't use column headers, you need to set up your spreadsheet exactly like the example above.  The format is a Question in column A on a single line and the Answers in column B on subsequent lines.  You can copy/paste multiple questions by repeating the above pattern.  Select the 2 columns from Excel and choose copy (CTRL+C or CMD+C), then go back to the app page and make sure the Question text edit box is active (see below, it will have a flashing cursor), press the Paste button (CTRL+V or CMD+V).  That will paste your Questions and Answers into the app.
 
 <p align="center" class="screen-shot">
-   <img class="image-border" alt="active text entry" src="../../assets/images/cp_text_active.png">
+   <img class="image-border" alt="active text entry" src="../../assets/images/cp_text_active.gif">
 </p>
 
 
