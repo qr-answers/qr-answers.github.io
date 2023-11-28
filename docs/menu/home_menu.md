@@ -199,13 +199,18 @@ This is an informational area showing you how many resources (Projects, Campaign
 <div class="accordion-bar">Subscription Plan</div>
 These options are subject to change.  We try to keep the help file sync'd up with the actual Plans, but occassionally they could be out of sync.
 
-Plans are either billed Annually (saving up to 25%) or Monthly.  You may choose which plan you would like to use from this section.  The Free $0 plan allows you to have 2 users (so you can see the collaboration features), 50 responses total over a one month period.  This should allow you to create a Project, add a Campaign with at least one question and get some feedback so you can see how the product works.  We hope you enjoy it and upgrade your plan to a paid plan to allow you to really explore the capabilities of QR-Answers.
+Plans are either billed Annually (saving up to 25%) or Monthly.  You may choose which plan you would like to use from this section.  An annual plan will last 12 months.  Monthly plans expire at the end of each month.  With either plan, you may choose to auto-renew the subscription by checking the 'Auto-renew subscription at period end' checkbox on the detail page of the subscription.
 
-  <p align="center" class="screen-shot">
-  <img class="image-border" alt="free subscription plan" src="../../assets/images/sub_plan_free.png">
-  </p>
+The difference between the plans are primarily how many users you have and how many responses per month you receive.  A Response is registered each time someone scans a QR coded answer.  The Individual Plan is limited to a single user.  The Team and Enterprise Plans allow you to add as many users as you like.  Responses can be added to any plan.  
 
-Subscriptions can be upgraded at any time with no 'penalty'.  If you want to cancel a subscription, then you click on the <span class="inline-button">Update Subscription</span> button under your Current Subscription (denoted by a green circle checkmark) and ...   Your subscription will be canceled at the END of your Subscription Period.  So, if you are on a monthly plan, it will cancel effective at the end of the month.  If you are on an annual plan, it will cancel at the Period End Date shown by your Current Plan.  You may use the subscription until the Period End date.
+There are a set number of responses included with each plan.  Additional Responses may be added in groups of 2,000 to any plan.  It is better to try to include the number of responses you think you may receive 'up front' when you initiate your subscription because it is slightly more expensive to add them later.  If you have an overage in any month (lots of people scanned your answers and you went over your quota), then you will see a notice under your subscription that there are Overage responses available to purchase.  If you purchase them, then they will be moved from 'overage storage' to be included in your Responses results. You are not required to purchase them, but they will not show up in your Results unless you do.  You may also add Responses at any time during your subcription period.  So, if you see you are getting more Responses than you thought you would, you can come back here and add more Responses before your reach an Overage condition.  Keep in mind that when you add Responses, you are adding them to each month left in your subscription. So, if you are four (4) months into an annual subscription and you add 2,000 Responses for $.03/response you will pay for eight (8) months * 2,0000 * $.03 = $480.  
+
+The 'Iitial add-ons' section of the subscription page are changable only during your initial sign-up for a subscription.  Once you purchase the subscription, you will be unable to change these - so take the time to try to figure out how many users and responses you are going to need.  You may add additional users and Responses later for a slight increase in cost under the 'Mid-subscription upgrades' section that will show up after your initial purchase.  Alternatively, you may Upgrade your subscription to a higher level at any time and receive a full credit for the unused porition of your current subscription.
+
+If your subscription expires and there are Responses that were received *after* your expiration date, they will show up here under your subscription and you will be able to purchase them if you like.
+
+
+Subscriptions can be upgraded at any time with no 'penalty'.  If you want to cancel a subscription, then you click on the <span class="inline-button">Update Subscription</span> button under your Current Subscription (denoted by a green circle checkmark) and uncheck the 'Auto-renew subscription at period end'.  Your subscription will be canceled at the End of your Subscription Period.  So, if you are on a monthly plan, it will cancel effective at the end of the month.  If you are on an annual plan, it will cancel at the Period End Date shown by your Current Plan.  You may use the subscription until the Period End date.  
 
 If you downgrade a subscription, it will downgrade effective on the Period End date.  If you upgrade a subscription, you will be credited for the amount paid for the unused time on your current subscription and your new subscription will deduct that as a credit for the new subscription. The renewal date will be set to the date you upgrade and the Period End date will be one period (month or year - depending on which plan you are choosing).
 
@@ -214,13 +219,67 @@ The long and short of this is that if you cancel, there is no refund or pro-rata
 Here are some examples:
 ...
 
+##### Free
+<div class="accordion-bar">Free</div>
+The Free plan includes 2 users.  If you sing up for this, you are the Team Administrator and you may invite one other person to join your team.  See the Project Concept section for a high-level view on how to create your Questions. You may generate as many Projects, Campaigns, etc. as you like, but you are limited to the number of responses you get to 50 responses.  That means that your QR code answers may be scanned 50 times before your quota is reached and you must upgrade or discontinue use of the product.  There is also a one month subscription time limit.  So, your subscription will expire when either the 50 Responses are received or the one month period ends.  You may upgrade to a paid plan at any time and your Projects, Campaigns, etc. will carry over to that subscription.
 
-This screen capture shows a person that has the Enterprise Plan as their current plan and it shows several options that were chosen as part of the plan - auto-renewal and some added responses (shown under the <span class="inline-button">Update Subscription</span> button).
+  <p align="center" class="screen-shot">
+  <img class="image-border" alt="free subscription plan" src="../../assets/images/sub_plan_free.png">
+  </p>
+
+
+##### Individual Annual
+<div class="accordion-bar">Individual Annual</div>
+The Individual plan is for a single user.  You will be allowed 2,000 Responses per month with no limits on Projects, Campaigns, etc.  
+
+  <p align="center" class="screen-shot">
+  <img class="image-border" alt="individual subscription plan" src="../../assets/images/sub_plan_individual.png">
+  </p>
+
+  <p align="center" class="screen-shot">
+  <img class="image-border" alt="individual subscription plan detail" src="../../assets/images/sub_plan_individual_detail.png">
+  </p>
+
+##### Team
+<div class="accordion-bar">Team Annual</div>
+The Team Plan is for 2 users and 4,000 Responses per month.  The Team and Enterprise Plans highlight the collaborative features of the product with real-time updates across all users. You may assign particular users to only have access to specific Projects and Campaigns. See [Manage Team](#team) for more information.
+
+  <p align="center" class="screen-shot">
+  <img class="image-border" alt="team subscription plan" src="../../assets/images/sub_plan_team.png">
+  </p>
+
+  <p align="center" class="screen-shot">
+  <img class="image-border" alt="team subscription plan detail" src="../../assets/images/sub_plan_team_detail.png">
+  </p>
+
+##### Enterprise
+<div class="accordion-bar">Enterprise Annual</div>
+The Enterprise Plan includes 10 users and 25,000 Responses per month. The Team and Enterprise Plans highlight the collaborative features of the product with real-time updates across all users. You may assign particular users to only have access to specific Projects and Campaigns. See [Manage Team](#team) for more information.
+
+In addition to having more Users and Responses the Enterprise Plan allows access to the rich underlying APIs and Dashboard construction features of the product.  See the [Developer](../developer/) section for an overview of all of the APIs.
 
   <p align="center" class="screen-shot">
   <img class="image-border" alt="enterprise subscription plan" src="../../assets/images/sub_plan_enterprise.png">
   </p>
 
+  <p align="center" class="screen-shot">
+  <img class="image-border" alt="enterprise subscription plan detail" src="../../assets/images/sub_plan_enterprise_detail.png">
+  </p>
+
+
+This screen capture shows a person that has the Enterprise Plan as their current plan and it shows several options that were chosen as part of the plan - auto-renewal and some added responses (shown under the <span class="inline-button">Update Subscription</span> button).
+
+  <p align="center" class="screen-shot">
+  <img class="image-border" alt="enterprise subscription plan chosen" src="../../assets/images/sub_plan_enterpriseB.png">
+  </p>
+
+For any subscription, after you have purchased it, you may return to this page to see what other options may be available. For example, the below screen shows that the original subscription was for the Enterprise version with no Initial add-ons (Users or Responses).  It also shows that you may add a 'Mid-subscription upgrade' be adding additional Users ore Responses.  You'll see the User and Responses rate may be slightly higher than the initial subscriptino rate, so try to size your subscription correctly 'up front'.  If there are Responses that were received that are over your Monthly quota, they will show up here as a purchase option.
+
+To cancel your subscription at the end of the period, uncheck the 'Auto-renew subsription at period end' checkbox and press the <span class="inline-button">Purchase</span> button.
+
+  <p align="center" class="screen-shot">
+  <img class="image-border" alt="enterprise subscription plan chosen detail" src="../../assets/images/sub_plan_enterpriseB_detail.png">
+  </p>
 
 #### Billing Details
 <div class="accordion-bar">Billing Details</div>
