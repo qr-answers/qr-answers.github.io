@@ -113,7 +113,7 @@ Below are the sections after choosing **Manage Plan**.
 
 #### Team Information
 <div class="accordion-bar">Team Information</div>
-The Team Information section shows who the billing contact is and when the subscription period started and renews.  This section also allows you (if you are the owner or designated Administrator) to change the Team name.
+The Team Information section shows who the billing contact is and when the subscription period started and renews.  This section also allows you (if you are the owner or designated Administrator) to change the Team name.  This section will only show up if you have Administrator access.
 
   <p align="center" class="screen-shot">
   <img class="image-border" alt="team information screen" src="../../assets/images/team_name.png">
@@ -149,14 +149,14 @@ As the owner of the account, you may not edit your own permissions.  They are fi
 
 There are 3 types of Roles you may assign to a team member.
 
-1) Administrator - that will give this team member the ability to do everything the 'owner' can do, <i>except</i> invite other users.  If you also check th "Can invite other users", then this team member has the ability to add new team members to your team.
+1) Administrator - that will give this team member the ability to do everything the 'owner' can do, <i>except</i> invite other users.  If you also check th "Can invite other users", then this team member has the ability to add new team members to your team.  If you check 'Has developer access', this enables the user to acess the Developer APIs and features described [here](../developer/).
 
 2) Auditor/Analyst - this allows the team member to look at all projects and download voting data, but it does not allow them to modify any of the Projects.  This person could be a 3rd party accountant or auditor that is looking at the results of your Projects.
 
-3) Project Administrator - this allows the team member to manage particular Projects (those that you check in the list).  They will not be able to access any other Projects than the ones that are checked.  You may give them Modify privileges (which makes them an Administrator at the Project level) or Readonly (which gives them an auditor/analyst like privilege at the Project level).  If you choose Modify, then you may also allow them to invite other users to their Project team by checking the Add Users checkbox.
+3) Project Administrator - this allows the team member to manage particular Projects (those that you check in the list).  They will not be able to access any other Projects than the ones that are checked.  You may give them Modify privileges (which makes them an Administrator at the Project level) or Readonly (which gives them an auditor/analyst like privilege at the Project level).  If you choose Modify, then you may also allow them to invite other users to their Project team by checking the Add Users checkbox.  If you check the Developer box, that will allow that user to access the [Developer](../developer/) APIs for that particular Project.
 
 {: .note }
-> If you select Project Aministrator, it will list all of the Projects you have created below it in a table.  In the above example, there are 2 Projects - Herman Miller and Knoll.  This user will only be allowed to access the Herman Miller Project.  If you click Administrator or Auditor/analyst, the Project list will disappear.
+> If you select Project Aministrator, it will list all of the Projects you have created below it in a table.  In the above example, there are 2 Projects - Herman Miller and Knoll.  This user will be allowed to access the Herman Miller and Knoll Projects.  However, they may invite people to only the Herman Miller Project.  In addition you have given them access to the [Developer](../developer/) APIs for the Herman Miller Project. If you click Administrator or Auditor/analyst, the Project list will disappear.
 
 
 ##### Invitations
@@ -167,7 +167,7 @@ To add team members to your team, click the <span class="inline-accordion">Invit
   <img class="image-border" alt="invitations add button" src="../../assets/images/manage_team.png">
   </p>
 
-If you have available space on your team (based on your subscription plan), you will be able to press that button and add a new team member.  If you do not have any available team member positions, you will need to add more people to your membership under the XXX tab.  The below screen will display after you press the Add button.
+If you have available space on your team (based on your subscription plan), you will be able to press that button and add a new team member.  If you do not have any available team member positions, you will need to add more people to your membership under the Manage Plan -> [Subscription Plan](#subscription-plan) accordion.  The below screen will display after you press the Add button.
 
   <p align="center" class="screen-shot">
   <img class="image-border" alt="click here to email" src="../../assets/images/invite.png">
@@ -186,19 +186,65 @@ Below is the sample email that is generated after you confirm adding your new te
   <img class="image-border" alt="invitation email" src="../../assets/images/invitation_email.png">
   </p>
 
-#### Plan Limits
-
-#### Plan Features
-
-#### Plan Notifications
-<div class="accordion-bar">Plan Notifications</div>
-Currently, the only notification setting is <span class="form-label">Notify Me of Response Limits via Email</span>.  The default is 'on'.  When you purchase a subscription, there is a pre-defined number of responses (votes) and a timeframe associated with all of your Campaigns.  If you are getting more responses than you thought, you will get an email notification letting you know that you have run out of responses (number left is 0).  You can increase your limit by going to the <span class="inline-accordion">TODO XXXXXXX</span> [section]() of the TODO XXX page.  Below is a sample where a new Answer was added **and** a Purchase Extension was chosen to add 5,000 responses and 2 more months.  
+#### Resources Used
+<div class="accordion-bar">Resources Used</div>
+This is an informational area showing you how many resources (Projects, Campaigns, etc.) are being used.  It also shows the number of Responses you have available and used.
 
   <p align="center" class="screen-shot">
-  <img class="image-border" alt="purchase extension" src="../../assets/images/purch_extension.png">
+  <img class="image-border" alt="resources used" src="../../assets/images/resources_used.png">
   </p>
 
-In addition, you will get notifications for every 25% overage that you have.  So, if you initially paid for 5,000 responses and you now have 6,250 responses, you will get an email letting you know you are over your limit.  For every 25% over, you will get a new email until the campaign time runs out, or you pay for the overage.  Your campaigns will still be recording votes when you go over your response limit, however, you will not see them unless you go back to the [Pay and Launch](./contests/pay_launch#purchase-question-and-answers) section and purchase the overage responses by selecting <span class="form-label">Purchase Responses to Offset Overage of X Responses</span> - where X is the number of responses you are over.  You should try go guess accurately how many responses you will get, as the overage price is slightly more than if you had purchased enough responses in the beginning. Once you pay for the overage, your Responses will show up in your [Results](results).
+
+#### Subscription Plan
+<div class="accordion-bar">Subscription Plan</div>
+These options are subject to change.  We try to keep the help file sync'd up with the actual Plans, but occassionally they could be out of sync.
+
+Plans are either billed Annually (saving up to 25%) or Monthly.  You may choose which plan you would like to use from this section.  The Free $0 plan allows you to have 2 users (so you can see the collaboration features), 50 responses total over a one month period.  This should allow you to create a Project, add a Campaign with at least one question and get some feedback so you can see how the product works.  We hope you enjoy it and upgrade your plan to a paid plan to allow you to really explore the capabilities of QR-Answers.
+
+  <p align="center" class="screen-shot">
+  <img class="image-border" alt="free subscription plan" src="../../assets/images/sub_plan_free.png">
+  </p>
+
+Subscriptions can be upgraded at any time with no 'penalty'.  If you want to cancel a subscription, then you click on the <span class="inline-button">Update Subscription</span> button under your Current Subscription (denoted by a green circle checkmark) and ...   Your subscription will be canceled at the END of your Subscription Period.  So, if you are on a monthly plan, it will cancel effective at the end of the month.  If you are on an annual plan, it will cancel at the Period End Date shown by your Current Plan.  You may use the subscription until the Period End date.
+
+If you downgrade a subscription, it will downgrade effective on the Period End date.  If you upgrade a subscription, you will be credited for the amount paid for the unused time on your current subscription and your new subscription will deduct that as a credit for the new subscription. The renewal date will be set to the date you upgrade and the Period End date will be one period (month or year - depending on which plan you are choosing).
+
+The long and short of this is that if you cancel, there is no refund or pro-rata credit.  The subscription will expire on the Period End date.  If you downgrade a subscription, it is similar to a cancel in that there is no pro-rata credit.  However, on the Period End date, your subsription will be reduced to whichever new plan you downgraded to.  If you are upgrading a subscription, you get full-credit for the unused portion of your 'old' subscription and it is applied to the new subscription rate - the caveat here is that the new subscription period start date will be set to the date you upgrade (as opposed to upgrading only for the time left on your old subscription).
+
+Here are some examples:
+...
+
+
+This screen capture shows a person that has the Enterprise Plan as their current plan and it shows several options that were chosen as part of the plan - auto-renewal and some added responses (shown under the <span class="inline-button">Update Subscription</span> button).
+
+  <p align="center" class="screen-shot">
+  <img class="image-border" alt="enterprise subscription plan" src="../../assets/images/sub_plan_enterprise.png">
+  </p>
+
+
+#### Billing Details
+<div class="accordion-bar">Billing Details</div>
+QR-Answrs uses Stripe (https://stripe.com/) to handle billing.  We do not store any of your credit card information.  This area will display a chronological list of successful billing activities with approximate amounts.  The reason they are approximate is that when the transactions are passed over to Stripe, Stripe takes the exact second that they receive the request and do pro-rata billing.  So, there may be a few pennies different between what is shown here and what Stripe shows on their portal.  There is a <span class="inline-button">Go to Stripe Portal</span> button in this section so that you may update your billing information or see your exact invoice history at any time.
+
+  <p align="center" class="screen-shot">
+  <img class="image-border" alt="resources used" src="../../assets/images/billing_details.png">
+  </p>
+
+
+#### Notifications
+<div class="accordion-bar">Notifications</div>
+Currently, the only notification setting is <span class="form-label">Notify Me of Response Limits via Email</span>.  The default is 'on'.  When you purchase a subscription, there is a pre-defined number of responses (votes) and a timeframe associated with all of your Campaigns.  If you are getting more responses than you thought, you will get an email notification letting you know that you have run out of responses (number left is 0).  You can increase your limit by going to the <span class="inline-accordion">Subscription Plan</span> [section](#subscription-plan). 
+
+In addition, you will get notifications for every 25% overage that you have.  So, if you initially paid for 5,000 responses and you now have 6,250 responses, you will get an email letting you know you are over your limit.  For every 25% over, you will get a new email until the campaign time runs out, or you pay for the overage.  Your campaigns will still be recording votes when you go over your response limit, however, you will not see them unless you go back to the [Subscription Plan](#subscription-plan) section and purchase the overage responses.  When you subscription you should try go guess accurately how many responses you will get, as the overage price is slightly more than if you had purchased enough responses in the beginning. Once you pay for the overage, your Responses will show up in your [Results](results).
+
+#### Developer
+<div class="accordion-bar">Developer</div>
+To enable Developer features, you will need to accept the Terms and Conditions by checking the confirmation box provided.  You will then be provided developer credentials (API keys, access information, etc.) to take advantage of the numerous APIs, Dashboards and other features available to developers.  Each developer you enable will have to accept the Terms and Conditions.  You may add developers in the [Manage Teams](#team) area.  Full Developer help may be found [here](../developer/)
+
+  <p align="center" class="screen-shot">
+  <img class="image-border" alt="developer terms and conditions" src="../../assets/images/developer_toc.png">
+  </p>
+
 
 ### Request Export
 Choosing this and confirming will trigger our servers to generate a download file for you with all of your data.  You will receive an email when the data is ready. Click on the link in the email to retrieve your data, or you may come back to the Home page Menu and choose Download Export to download the data.
