@@ -265,6 +265,21 @@ Then click on the name of the Campaign you just created to go to the Campaign De
 
 #### Setup
 <div class="accordion-bar">Setup</div>
+The Campaign Setup section will allow you to edit a few Campaign properties (name, abbreviation, tags, description) as well as dictate the Schedule and Response Frequency of the Campaign.
+
+   <p align="center" class="screen-shot">
+   <img class="image-border" alt="campaign setup" src="../../assets/images/campaign_setup.png">
+   </p>
+
+<div class="accordion-bar-qr">Schedule</div>
+The Schedule section determines when your Campaign will be in what 'state'.  There are three (3) states to a campaign: "Draft" - where any votes registered are restricted and used just for testing; "Active" - this is the state where you are tallying real results and want to measure accurately the Responses; "Inactive" - this is really the period where the Campaign is finished and the Responses may or may not be counted.  You may move the state of the Campaign between these states by choosing either Manual or Automatic.  If you choose Manual, then you are responsible for moving the Campaign state from Draft to Active to Inactive under this section.  
+
+If you choose Automatic, then you need to enter the Start date and End date of the Active period using the date picker.  Any Responses prior to the start date will be marked 'Draft' and any responses received after the End date will be marked 'Inactive'.  The Responses between the Start date and End date will be marked as the 'Active' Responses.  The Current Status will be displayed with the colored boxes.
+
+Be sure to push the <span class="inline-button">Update</span> button to save your changes!
+
+<div class="accordion-bar-qr">Response Frequency</div>
+The Response Frequency section allows you to choose how many times/how often a person may register a vote.  Choosing <span class="inline-button">No Limit</span> allows the user to vote as many times and as often as they like for a single Question.  You might use this option if you want to monitor real-time results on how someone feels about something that may change over time, etc.  Choosing the <span class="inline-button">Once</span> button will restrict the voter to a single vote on a Question.  They will be allowed to change their vote, but the total of votes will only register their 'last' chosen answer. For example, if someone choose "Yes", but changed their mind to "No", then the "Yes" vote will be subtracted and the "No" vote will be registered.  The <span class="inline-button">Hourly</span> and <span class="inline-button">Daily</span> buttons will restrict the voter to once per Hour or Day.  For example, if you choose Day, and post a Question at a conference, the voter will only be able to vote one time per day on that Question.
 
 #### Customization
 <div class="accordion-bar">Customization</div>
