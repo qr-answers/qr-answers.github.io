@@ -44,7 +44,7 @@ const qranswers = require("qranswers")(apiKey)
 ```
 
 
-### The Subscription Response Object
+## The Subscription Response Object
 <span class="obj-attributes-title">Attributes</span>
 <div class="obj-attribs">
     <div class="obj-pname">baseId<span class="obj-ptype">147 characters</span></div>
@@ -175,9 +175,7 @@ const [projects, setProjects] = useState(null);
 ...
 ```
 
-Sample routines using API wrapper:
-
-### The Project Object
+## The Project Object
 <span class="obj-attributes-title">Attributes</span>
 <div class="obj-attribs">
     <div class="obj-pname">id<span class="obj-ptype">36 characters</span></div>
@@ -220,7 +218,7 @@ Sample routines using API wrapper:
     const projRet = await qranswers.api.getProject(projectId);
 
 ```
-REST API
+<span class="api-rest">REST API</span>
 https://api.qr-answers.com/v1/projects/:projectId
 
 ### List Projects
@@ -241,10 +239,10 @@ https://api.qr-answers.com/v1/projects/:projectId
       console.log(projRet);   
     }
 ```
-REST API
+<span class="api-rest">REST API</span>
 https://api.qr-answers.com/v1/projects/list
 
-### The Campaign Object
+## The Campaign Object
 <span class="obj-attributes-title">Attributes</span>
 <div class="obj-attribs">
     <div class="obj-pname">id<span class="obj-ptype">36 characters</span></div>
@@ -299,7 +297,7 @@ https://api.qr-answers.com/v1/projects/list
     const campaignRet = await qranswers.api.getCampaign(campaignId);
 
 ```
-REST API
+<span class="api-rest">REST API</span>
 https://api.qr-answers.com/v1/campaigns/:campaignId
 
 ### List Campaigns
@@ -322,11 +320,11 @@ https://api.qr-answers.com/v1/campaigns/:campaignId
     setFetchingCampaigns({...fetchingCampaigns, [projectId]: false});
   };
   ```
-REST API
+<span class="api-rest">REST API</span>
 https://api.qr-answers.com/v1/campaigns/list/:projectId
 
 
-### The Location Object
+## The Location Object
 <span class="obj-attributes-title">Attributes</span>
 <div class="obj-attribs">
     <div class="obj-pname">id<span class="obj-ptype">36 characters</span></div>
@@ -373,7 +371,7 @@ https://api.qr-answers.com/v1/campaigns/list/:projectId
     const lcoationRet = await qranswers.api.getLocation(locationId);
 
 ```
-REST API
+<span class="api-rest">REST API</span>
 https://api.qr-answers.com/v1/locations/:locationId
 
 ### List Locations
@@ -397,10 +395,10 @@ https://api.qr-answers.com/v1/locations/:locationId
   };
 
   ```
-REST API
+<span class="api-rest">REST API</span>
 https://api.qr-answers.com/v1/locations/list/:projectId
 
-### The Question Object
+## The Question Object
 <span class="obj-attributes-title">Attributes</span>
 <div class="obj-attribs">
     <div class="obj-pname">id<span class="obj-ptype">36 characters</span></div>
@@ -443,7 +441,7 @@ https://api.qr-answers.com/v1/locations/list/:projectId
     const questionRet = await qranswers.api.getQuestion(questionId);
 
 ```
-REST API
+<span class="api-rest">REST API</span>
 https://api.qr-answers.com/v1/questions/:questionId
 
 ### List Questions
@@ -467,10 +465,10 @@ https://api.qr-answers.com/v1/questions/:questionId
   };
 
   ```
-REST API
+<span class="api-rest">REST API</span>
 https://api.qr-answers.com/v1/questions/list/:projectId
 
-### The Answer Object
+## The Answer Object
 <span class="obj-attributes-title">Attributes</span>
 <div class="obj-attribs">
     <div class="obj-pname">id<span class="obj-ptype">36 characters</span></div>
@@ -533,7 +531,7 @@ https://api.qr-answers.com/v1/questions/list/:projectId
     const answerRet = await qranswers.api.getAnswer(answerId);
 
 ```
-REST API
+<span class="api-rest">REST API</span>
 https://api.qr-answers.com/v1/answers/:answerId
 
 ### List Answers
@@ -553,10 +551,10 @@ https://api.qr-answers.com/v1/answers/:answerId
     setFetchingAnswers({...fetchingAnswers, [questionId]: false});
   };
   ```
-REST API
+<span class="api-rest">REST API</span>
 https://api.qr-answers.com/v1/answers/list/:questionId
 
-### The Question Assignment Object
+## The Question Assignment Object
 
 Please read the [Project Concept](../../index.html#project-concept---important) to familiarize yourself with how Projects, Campaigns, Locations and Questions interract.
 
@@ -639,7 +637,7 @@ For any given Location, you may have mutiple Questions selected for that Locatio
     const rqaRet = await qranswers.api.getQuestionAssignment(baseId);
 
 ```
-REST API
+<span class="api-rest">REST API</span>
 https://api.qr-answers.com/v1/questionassignments/:baseId
 
 ### List Question Assignments
@@ -659,10 +657,10 @@ https://api.qr-answers.com/v1/questionassignments/:baseId
     setFetchingQuestionAssignments({...fetchingQuestionAssignments, [campaignId]: false});
   };
   ```
-REST API
+<span class="api-rest">REST API</span>
 https://api.qr-answers.com/v1/questionassignments/list/:campaignId
 
-### The Response Object
+## The Response Object
 
 For any given Location, you may have mutiple Questions selected for that Location.  For each unique combination of Campaign, Location, Question, there is a record that describes the information about that combination.  The record is accessed by the baseId.  The baseId is a combination of the campaignId_quesitonLocationId_locationId_questionId.  To get all votes/visits to *any* Answer for the given combination of Campaign, QuestionLocation. Location, Question, you will receive an array of Response Objects for the given baseId.  So, if you have a Question at a particular Location and you want to know how many votes have been received by each answer, call getResponse(baseId) and it will return the Response Object for each Answer.  More than likely, you will want to access the Response information from the Response Details object below.
 
@@ -693,43 +691,45 @@ For any given Location, you may have mutiple Questions selected for that Locatio
 </div>
 
 ### Get Response
-<span class="api-code">getQuestionAssignment(&lt;baseId&gt;)</span>
-<span class="api-code-descr">Use getQuestionAssignment to retrieve a Question Assignment's Attributes </span>
+<span class="api-code">getResponse(&lt;baseId&gt;)</span>
+<span class="api-code-descr">Use getResponse to retrieve a list of Responses Objects for each Answer</span>
 ```javascript
     const baseId = "845d11812_xxx";
-    const rqaRet = await qranswers.api.getQuestionAssignment(baseId);
+    const rqaRet = await qranswers.api.getResponse(baseId);
 
 ```
-REST API
+<span class="api-rest">REST API</span>
 https://api.qr-answers.com/v1/responses/:baseId
 
 ### List Responses
   ```
-  // QuestionAssignments are retrieved based on a Campaign.  There are multiple locations for a campaign and there are potentially multiple questions at a location
-  const fetchQuestionAssignments = async (questionId) => {
-    setFetchingQuestionAssignments({...fetchingQuestionAssignments, [campaignId]: true});
-    const getRes = await qranswers.api.getQuestionAssignmentList(campaignId);
+  // Responses are retrieved based on a Campaign.  There are multiple locations for a campaign and there are potentially multiple questions at a location
+  const fetchResponses = async (campaignId) => {
+    setFetchingResponseList({...fetchingResponseList, [campaignId]: true});
+    const getRes = await qranswers.api.getResponseList(campaignId);
     if (getRes.data) {
-      var newList = {...questionAssignments};
+      var newList = {...responseList};
       newList[campaignId] = getRes.data;
       newList[campaignId].visible = true;
-      setQuestionAssignments(newList);
+      setResponseList(newList);
     } else {
       console.log(getRes);
     }
-    setFetchingQuestionAssignments({...fetchingQuestionAssignments, [campaignId]: false});
+    setFetchingResponseList({...fetchingResponseList, [campaignId]: false});
   };
   ```
-REST API
+<span class="api-rest">REST API</span>
 https://api.qr-answers.com/v1/responses/list/:campaignId
   
-### The Response Details Object
+## The Response Details Object
 
 Please read the [Project Concept](../../index.html#project-concept---important) to familiarize yourself with how Projects, Campaigns, Locations and Questions interract.
 
 For any given Location, you may have mutiple Questions selected for that Location.  For each unique combination of Campaign, Location, Question, there is a record that describes the information about that combination.  This record is the Question Assignment Object.  Each object will contain the Location and Question as well as all of the Answers available for that combination.  In addition to the Question Assignment Object, there is a Response Object as described above.  The Response Details Object combines the Response Object and the Question Assignment Object to a single API call so that you can get the information needed to display the Question, Answers and Responses for any baseId or campaignId.
 
 If you are looking to display real-time results on your own webpage, the way to do that is to set up a subscription for the baseId with ```qranswers.api.subscribeToSpecificQuestionResponses(baseId)```, then call the ```qranswers.api.getResponseDetails(baseId)``` to display the current values.  You will get a callback on any updates to the baseId through your subscription.  The callback will provide you with the total number of visits, so you can update the value to whatever is received (vs. add it).
+
+In addition, you should look at the [Dashboards](./dashboard.html) documentation, as it allows you to create a real-time Dashboard view of any of your Questions so that you can see votes as they happen.
 
 <span class="obj-attributes-title">Attributes</span>
 <div class="obj-attribs">
@@ -842,7 +842,7 @@ If you are looking to display real-time results on your own webpage, the way to 
     const rqaRet = await qranswers.api.getResponseDetails(baseId);
 
 ```
-REST API
+<span class="api-rest">REST API</span>
 https://api.qr-answers.com/v1/responsedetails/:baseId
 
 ### List Response Details
@@ -862,5 +862,5 @@ https://api.qr-answers.com/v1/responsedetails/:baseId
     setFetchingResponseDetails({...fetchingResponseDetails, [campaignId]: false});
   };
   ```
-REST API
+<span class="api-rest">REST API</span>
 https://api.qr-answers.com/v1/responsedetails/list/:campaignId
