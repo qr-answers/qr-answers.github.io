@@ -85,8 +85,13 @@ app.post('/qrhook', function(req, res) {
   switch (event.type) {
     case 'vote.evResponseVote':
       const data = event.data.object;
-      console.log('Received event:', event);
+      console.log('Received evRsponseVote:', event);
       break;
+    case 'vote.evRawVote':
+      const data = event.data.object;
+      console.log('Received evRawVote:', event);
+      break;
+
   }
 
   res.json({success: 'post call succeed!', url: req.url, body: req.body})
@@ -101,4 +106,54 @@ app.listen(3000, function() {
 // this file
 module.exports = app
 
+```
+
+Below is the format of the 'vote.evResponseVote' event data:
+
+```
+{
+  id: 'vote',
+  object: 'event',
+  api_version: '2023-09-18',
+  created: 1701406737583,
+  type: 'vote.evResponseVote',
+  data: {
+    object: {
+      id: '6dbbffc8-4742-4bb5-9732-405c1XXXXXXX_54a2d820-1808-43f6-a48d-1d8b2XXXXXXX_f366dee6-1b48-4f11-9376-cbbd3XXXXXXX_f76c45a0-40ab-4d66-8dbb-27f10XXXXXXX',
+      object: 'vote',
+      clientId: '14c23315-3583-4f27-865d-56af2b73b4fXXXXXXX',
+      projectId: 'f6b90ccd-7c68-46de-bb67-ff331XXXXXXX',
+      answerId: '4a7ffac3-c524-44d6-a900-32d3cXXXXXXX',
+      count: '30'
+    }
+  }
+}
+```
+
+Below is the format of the 'vote.evRawVote' data:
+
+```
+{
+  id: 'vote',
+  object: 'event',
+  api_version: '2023-09-18',
+  created: 1701406739643,
+  type: 'vote.evRawVote',
+  data: {
+    object: {
+      object: 'evRawVote',
+      clientId: '14c23315-3583-4f27-865d-56af2bXXXXXXX',
+      projectId: 'f6b90ccd-7c68-46de-bb67-ff331XXXXXXX',
+      questionLocationId: '54a2d820-1808-43f6-a48d-1d8b2XXXXXXX',
+      locationId: 'f366dee6-1b48-4f11-9376-cbbdXXXXXXX',
+      questionId: 'f76c45a0-40ab-4d66-8dbb-27f10XXXXXXX',
+      answerId: '4a7ffac3-c524-44d6-a900-32d3cXXXXXXX',
+      schedule: 'nolimit#',
+      vote: 1,
+      createdAt: '2023-12-01T04:58:57.583Z',
+      userId: 'b0c72ddd-9d6e-4e59-9b9b-1c4a3XXXXXXX',
+      eventId: '9e7a176f-820b-4a78-8409-97a1dXXXXXXX'
+    }
+  }
+}
 ```

@@ -28,7 +28,7 @@ nav_order: 3
 
 ## What is a Dashboard?
 
-A Dashboard is HTML code that can be embedded in an iFrame or used directly in a browser to show real-time results from your Questions/Answers.  Each time someone scans an Answer, the interface will udpate in real-time.  So, if you sent out fliers asking people to vote for which new company logo to use, you could put an iFrame on your main web page and see the real-time votes display in that iFrame.  There are many different kinds of graph types and analytics that can be displayed.  Here is a sample Dashboard:
+A Dashboard is URL that can be embedded in an iFrame or used directly in a browser to show real-time results from your Questions/Answers.  Each time someone scans an Answer, the interface will udpate in real-time.  So, if you sent out fliers asking people to vote for which new company logo to use, you could put an iFrame on your main web page and see the real-time votes display in that iFrame.  There are many different kinds of graph types and analytics that can be displayed.  Here is a sample Dashboard:
 
 
 

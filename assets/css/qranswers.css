@@ -159,3 +159,168 @@
     background: #FEF6FB;
     border-radius: 8px;
 }
+.obj-attributes-title {
+    box-sizing: border-box;
+    color: rgb(42, 47, 69);
+    display: flex;
+    flex-wrap: wrap;
+    font-family:'Segoe UI', Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 40px;
+    border-bottom-color: rgb(227, 232, 238);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+.obj-attribs {
+    align-items: baseline;
+    border-bottom-color: rgb(227, 232, 238);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    box-sizing: border-box;
+    color: rgb(42, 47, 69);
+    display: block;
+    font-family:'Segoe UI', Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 20px
+}
+.obj-pname {
+    box-sizing: border-box;
+    color: rgb(60, 66, 87);
+    font-family: Menlo, Consolas, monospace;
+    font-size: 13px;
+    font-weight: 600;
+    overflow-wrap: break-word;
+    text-align: left;
+    text-size-adjust: 100%;
+}
+.obj-ptype {
+    box-sizing: border-box;
+    color: rgb(135, 146, 162);
+    font-family:'Segoe UI', Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 10px;
+    text-align: left;
+}
+.obj-descr {
+    box-sizing: border-box;
+    color: rgb(79, 86, 107);
+    font-family:'Segoe UI', Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    overflow-wrap: break-word;
+    text-align: left;
+    text-size-adjust: 100%;
+    margin-bottom: 8px;
+}
+.api-code {
+    display: block;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-family: Menlo, Consolas, monospace;
+    font-weight: 800;
+    font-size: 22px;
+
+}
+.api-code-param {
+    color: rgb(135, 146, 162);
+}
+.api-code-descr {
+    margin-left: 10px;
+    box-sizing: border-box;
+    color: rgb(79, 86, 107);
+    font-family:'Segoe UI', Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    overflow-wrap: break-word;
+    text-align: left;
+    text-size-adjust: 100%;
+    margin-bottom: 8px;
+
+}
+.api-rest {
+    display: block;
+    margin-left: 10px;
+}
+.curl-box {
+    background: #233659;
+    color: #f8f8f2;
+    font-family: "Lekton", Consolas, Monaco, mnonospace;
+    line-height: 1.5em;
+    padding: 1em;
+    margin: 0.5em;
+    border-radius: .3em;
+}
+pre {
+    counter-reset: line;
+  }
+  
+  .curl-code {
+    counter-increment: line;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    hyphens: none;
+  }
+  
+  .curl-code::before {
+    content: counter(line);
+    display: inline-block;
+    width: 1.5em; /* Fixed width */
+    border-right: 1px solid #ddd;
+    padding: 0 .5em;
+    margin-right: .5em;
+    color: #888;
+    -webkit-user-select: none;
+  }
+.api-params-lbl {
+    margin-left: 10px;
+    display: block;
+}
+.api-params {
+    align-items: baseline;
+    box-sizing: border-box;
+    color: rgb(42, 47, 69);
+    display: block;
+    font-family:'Segoe UI', Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 30px;
+}
+.api-pname {
+    box-sizing: border-box;
+    color: rgb(84, 94, 138);
+    font-family: Menlo, Consolas, monospace;
+    font-size: 18px;
+    font-weight: 600;
+    overflow-wrap: break-word;
+    text-align: left;
+    text-size-adjust: 100%;
+    margin-bottom: 20px;
+}
+.api-ptype {
+    box-sizing: border-box;
+    color: rgb(135, 146, 162);
+    font-family:'Segoe UI', Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 10px;
+    text-align: left;
+}
+.api-descr {
+    box-sizing: border-box;
+    color: rgb(79, 86, 107);
+    font-family:'Segoe UI', Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    overflow-wrap: break-word;
+    text-align: left;
+    text-size-adjust: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}

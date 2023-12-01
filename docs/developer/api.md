@@ -43,6 +43,7 @@ const apiKey = "api_e1238.....";
 const qranswers = require("qranswers")(apiKey)
 ```
 
+<div style="margin-top: 80px"></div>
 
 ## The Subscription Response Object
 <span class="obj-attributes-title">Attributes</span>
@@ -70,9 +71,9 @@ const qranswers = require("qranswers")(apiKey)
 ### Subscriptions
 You may subscribe to real-time Responses in your application by initializing the subscription module and subscribing to the Responses you are looking for.  A Response is generated when someone scans the QR code for your answer.  The Response consists of the information as to what Project, Campaign, Location, Question and Answer was chosen - this is the [Subscription Response Object](#the-subscription-response-object) described above..  Remember that an answer is scoped to a particular Campaign, Location and Question. Since the Question can be posted in more than one location, the unique identifier (we call it the baseId) is formed by this pattern:  &lt;campaignId&gt;_&lt;questionLoationId&gt;_&lt;locationId&gt;_&lt;questionId&gt;.  You may subscribe to Responses for all of your Campaigns, or you may subscribe to a single Question at a particular Location in a particular Campaign.  If you are using React (our recommendation), the pattern to follow is to subsribe and cleanup as follows (this code subscribes to all Responses):
 
-```
+```javascript
 const [qrInited, setQrInited] = useState(false);
-...
+
 useEffect(() => {
     if (qrInited) {
         const sub = qranswers.subscriptions.subscribeToAllResponses((response) => {
@@ -101,7 +102,7 @@ To subscribe to an individual Question's answers/Responses, follow this pattern 
   </p>
 
 
-```
+```javascript
 const baseId = "6dbbffc8-4742xxxx_54a2d82xxxx_f366dexxxx_f76c45axxxx";
 
 const [qrInited, setQrInited] = useState(false);
@@ -130,7 +131,7 @@ useEffect(() => {
 
 
 
-## API 
+## qranswers module API 
 
 The API wrapper in the qranswers module makes calls to the REST APIs of qr-answers.com.  The base URL for all REST APIs is ```https://api.qr-answers.com/v1```.  For example, to get the list of Locations for a given Project ID ("56abd812_xxx"), the wrapper fetches ```https://api.qr-answers.com/v1/locations/list/56abd812_xxx``` with ```Authorization``` header of the API Key.  For example:
 
@@ -175,6 +176,29 @@ const [projects, setProjects] = useState(null);
 ...
 ```
 
+## REST API 
+The REST API can be used by using CURL or some other fetching mechanism to access the REST APIs.  You must pass your Authorization token (the API Key under Standard Keys from [here](../menu/home_menu.html#developer)).   The base URL is https://api.qr-answers.com/v1/.  The documentation below uses an Express style notation for the parameter(s) to pass to the REST call.  For example, if you are trying to list Campaigns for a particular Project, the parameter to the /campaigns/list/ call is the projectId.  The notation in the call will display :projectId for the parameter.  For example:
+
+<span class="api-rest">REST API</span>
+<div class="curl-box">
+<pre>
+<code class="curl-code">curl -G https://api.qr-answers.com/v1/campaigns/list/:projectId \</code>
+<code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
+</pre>
+</div>
+
+You would replace the ':projectId' with the Project Id you would like to access.  For example:
+
+<span class="api-rest">REST API</span>
+<div class="curl-box">
+<pre>
+<code class="curl-code">curl -G https://api.qr-answers.com/v1/campaigns/list/6dbbffc8-4742-4bb5-9732-405c18965da1 \</code>
+<code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
+</pre>
+</div>
+
+<div style="margin-top: 80px"></div>
+
 ## The Project Object
 <span class="obj-attributes-title">Attributes</span>
 <div class="obj-attribs">
@@ -211,19 +235,32 @@ const [projects, setProjects] = useState(null);
 </div>
 
 ### Get Project
-<span class="api-code">getProject(&lt;projectId&gt;)</span>
-<span class="api-code-descr">Use getProject to retrieve a Project's Attributes </span>
+<div class="api-descr">Use getProject to retrieve a Project's Attributes</div>
+<div class="api-code">qranswers.api.getProject(<span class="api-code-param">&lt;projectId&gt;</span>)</div>
+<div class="api-params-lbl">Parameters:</div>
+<div class="api-params">
+    <div class="api-pname">projectId<span class="api-ptype">36 characters</span></div>
+</div>
 ```javascript
     const projectId = "56abd812_xxx";
     const projRet = await qranswers.api.getProject(projectId);
 
 ```
 <span class="api-rest">REST API</span>
-https://api.qr-answers.com/v1/projects/:projectId
+<div class="curl-box">
+<pre>
+<code class="curl-code">curl -G https://api.qr-answers.com/v1/projects/:projectId \</code>
+<code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
+</pre>
+</div>
 
 ### List Projects
-<span class="api-code">getProjectList()</span>
-<span class="api-code-descr">Use getProjectList to retrieve an array of all Project's</span>
+<div class="api-descr">Use getProjectList to retrieve an array of all Projects</div>
+<div class="api-code">qranswers.api.getProjectList()</div>
+<div class="api-params-lbl">Parameters:</div>
+<div class="api-params">
+    <div class="api-pname">none</div>
+</div>
 
 ```jsx
 // Projects are retrieved based on your API Key.  If your API key is only valid for particular Projects, then
@@ -240,7 +277,14 @@ https://api.qr-answers.com/v1/projects/:projectId
     }
 ```
 <span class="api-rest">REST API</span>
-https://api.qr-answers.com/v1/projects/list
+<div class="curl-box">
+<pre>
+<code class="curl-code">curl -G https://api.qr-answers.com/v1/projects/list \</code>
+<code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
+</pre>
+</div>
+
+<div style="margin-top: 80px"></div>
 
 ## The Campaign Object
 <span class="obj-attributes-title">Attributes</span>
@@ -290,17 +334,34 @@ https://api.qr-answers.com/v1/projects/list
 </div>
 
 ### Get Campaign
-<span class="api-code">getCampaign(&lt;campaignId&gt;)</span>
-<span class="api-code-descr">Use getCampaign to retrieve a Campaign's Attributes </span>
+<div class="api-descr">Use getCampaign to retrieve a Campaign's Attributes</div>
+<div class="api-code">qranswers.api.getCampaign(<span class="api-code-param">&lt;campaignId&gt;</span>)</div>
+<div class="api-params-lbl">Parameters:</div>
+<div class="api-params">
+    <div class="api-pname">campaignId<span class="api-ptype">36 characters</span></div>
+</div>
+
 ```javascript
     const campaignId = "193ab812_xxx";
     const campaignRet = await qranswers.api.getCampaign(campaignId);
 
 ```
 <span class="api-rest">REST API</span>
-https://api.qr-answers.com/v1/campaigns/:campaignId
+<div class="curl-box">
+<pre>
+<code class="curl-code">curl -G https://api.qr-answers.com/v1/campaigns/:campaignId \</code>
+<code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
+</pre>
+</div>
 
 ### List Campaigns
+<div class="api-descr">Use getCampaignList to retrieve an array of all Campaigns in a Project</div>
+<div class="api-code">qranswers.api.getCampaignList(<span class="api-code-param">&lt;projectId&gt;</span>)</div>
+<div class="api-params-lbl">Parameters:</div>
+<div class="api-params">
+    <div class="api-pname">projectId<span class="api-ptype">36 characters</span></div>
+</div>
+
 ```
   // Multiple Campaigns per Project Id.
   const [campaigns, setCampaigns] = useState({});   
@@ -321,8 +382,14 @@ https://api.qr-answers.com/v1/campaigns/:campaignId
   };
   ```
 <span class="api-rest">REST API</span>
-https://api.qr-answers.com/v1/campaigns/list/:projectId
+<div class="curl-box">
+<pre>
+<code class="curl-code">curl -G https://api.qr-answers.com/v1/campaigns/list/:projectId \</code>
+<code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
+</pre>
+</div>
 
+<div style="margin-top: 80px"></div>
 
 ## The Location Object
 <span class="obj-attributes-title">Attributes</span>
@@ -364,17 +431,33 @@ https://api.qr-answers.com/v1/campaigns/list/:projectId
 </div>
 
 ### Get Location
-<span class="api-code">getLocation(&lt;locationId&gt;)</span>
-<span class="api-code-descr">Use getLocation to retrieve a Location's Attributes </span>
+<div class="api-descr">Use getLocation to retrieve a Location's Attributes</div>
+<div class="api-code">qranswers.api.getLocation(<span class="api-code-param">&lt;locationId&gt;</span>)</div>
+<div class="api-params-lbl">Parameters:</div>
+<div class="api-params">
+    <div class="api-pname">locationId<span class="api-ptype">36 characters</span></div>
+</div>
+
 ```javascript
     const locationId = "922ab812_xxx";
     const lcoationRet = await qranswers.api.getLocation(locationId);
 
 ```
 <span class="api-rest">REST API</span>
-https://api.qr-answers.com/v1/locations/:locationId
+<div class="curl-box">
+<pre>
+<code class="curl-code">curl -G https://api.qr-answers.com/v1/locations/:locationId \</code>
+<code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
+</pre>
+</div>
 
 ### List Locations
+<div class="api-descr">Use getLocationList to retrieve an array of all Locations in a Project</div>
+<div class="api-code">qranswers.api.getLocationList(<span class="api-code-param">&lt;projectId&gt;</span>)</div>
+<div class="api-params-lbl">Parameters:</div>
+<div class="api-params">
+    <div class="api-pname">projectId<span class="api-ptype">36 characters</span></div>
+</div>
   ```
   // Multiple Locations per Project Id.
   const [locations, setLocations] = useState({});
@@ -396,7 +479,14 @@ https://api.qr-answers.com/v1/locations/:locationId
 
   ```
 <span class="api-rest">REST API</span>
-https://api.qr-answers.com/v1/locations/list/:projectId
+<div class="curl-box">
+<pre>
+<code class="curl-code">curl -G https://api.qr-answers.com/v1/locations/list/:projectId \</code>
+<code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
+</pre>
+</div>
+
+<div style="margin-top: 80px"></div>
 
 ## The Question Object
 <span class="obj-attributes-title">Attributes</span>
@@ -434,17 +524,34 @@ https://api.qr-answers.com/v1/locations/list/:projectId
 </div>
 
 ### Get Question
-<span class="api-code">getQuestion(&lt;questionId&gt;)</span>
-<span class="api-code-descr">Use getQuestion to retrieve a Question's Attributes </span>
+<div class="api-descr">Use getQuestion to retrieve a Question's Attributes</div>
+<div class="api-code">qranswers.api.getQuestion(<span class="api-code-param">&lt;questionId&gt;</span>)</div>
+<div class="api-params-lbl">Parameters:</div>
+<div class="api-params">
+    <div class="api-pname">questionId<span class="api-ptype">36 characters</span></div>
+</div>
+
 ```javascript
     const questionId = "9a891812_xxx";
     const questionRet = await qranswers.api.getQuestion(questionId);
 
 ```
 <span class="api-rest">REST API</span>
-https://api.qr-answers.com/v1/questions/:questionId
+<div class="curl-box">
+<pre>
+<code class="curl-code">curl -G https://api.qr-answers.com/v1/questions/:questionId \</code>
+<code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
+</pre>
+</div>
 
 ### List Questions
+<div class="api-descr">Use getQuestionList to retrieve an array of all Locations in a Project</div>
+<div class="api-code">qranswers.api.getQuestionList(<span class="api-code-param">&lt;projectId&gt;</span>)</div>
+<div class="api-params-lbl">Parameters:</div>
+<div class="api-params">
+    <div class="api-pname">projectId<span class="api-ptype">36 characters</span></div>
+</div>
+
   ```
   // Multiple Questions per Project Id.
   const [questions, setQuestions] = useState({});
@@ -466,7 +573,14 @@ https://api.qr-answers.com/v1/questions/:questionId
 
   ```
 <span class="api-rest">REST API</span>
-https://api.qr-answers.com/v1/questions/list/:projectId
+<div class="curl-box">
+<pre>
+<code class="curl-code">curl -G https://api.qr-answers.com/v1/questions/list/:projectId \</code>
+<code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
+</pre>
+</div>
+
+<div style="margin-top: 80px"></div>
 
 ## The Answer Object
 <span class="obj-attributes-title">Attributes</span>
@@ -524,17 +638,33 @@ https://api.qr-answers.com/v1/questions/list/:projectId
 </div>
 
 ### Get Answer
-<span class="api-code">getAnswer(&lt;answerId&gt;)</span>
-<span class="api-code-descr">Use getAnswer to retrieve a Answer's Attributes </span>
+<div class="api-descr">Use getAnswer to retrieve a Answer's Attributes</div>
+<div class="api-code">qranswers.api.getAnswer(<span class="api-code-param">&lt;answerId&gt;</span>)</div>
+<div class="api-params-lbl">Parameters:</div>
+<div class="api-params">
+    <div class="api-pname">answerId<span class="api-ptype">36 characters</span></div>
+</div>
+
 ```javascript
     const answerId = "abef11812_xxx";
     const answerRet = await qranswers.api.getAnswer(answerId);
 
 ```
 <span class="api-rest">REST API</span>
-https://api.qr-answers.com/v1/answers/:answerId
+<div class="curl-box">
+<pre>
+<code class="curl-code">curl -G https://api.qr-answers.com/v1/answers/:answerId \</code>
+<code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
+</pre>
+</div>
 
 ### List Answers
+<div class="api-descr">Use getAnswerList to retrieve an array of all Answers for a Question</div>
+<div class="api-code">qranswers.api.getAnswerList(<span class="api-code-param">&lt;questionId&gt;</span>)</div>
+<div class="api-params-lbl">Parameters:</div>
+<div class="api-params">
+    <div class="api-pname">questionId<span class="api-ptype">36 characters</span></div>
+</div>
   ```
   // Answers are retrieved based on the Question Id
   const fetchAnswers = async (questionId) => {
@@ -552,13 +682,20 @@ https://api.qr-answers.com/v1/answers/:answerId
   };
   ```
 <span class="api-rest">REST API</span>
-https://api.qr-answers.com/v1/answers/list/:questionId
+<div class="curl-box">
+<pre>
+<code class="curl-code">curl -G https://api.qr-answers.com/v1/answers/list/:questionId \</code>
+<code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
+</pre>
+</div>
+
+<div style="margin-top: 80px"></div>
 
 ## The Question Assignment Object
 
 Please read the [Project Concept](../../index.html#project-concept---important) to familiarize yourself with how Projects, Campaigns, Locations and Questions interract.
 
-For any given Location, you may have mutiple Questions selected for that Location.  For each unique combination of Campaign, Location, Question, there is a record that describes the information about that combination.  This record is the Question Assignment Object.  Each object will contain the Location and Question as well as all of the Answers available for that combination.  This can be used to more readily list the text and names of things without making multiple calls to individual APIs.
+For any given Location, you may have mutiple Questions selected for that Location.  For each unique combination of Campaign, Location, Question, there is a record that describes the information about that combination.  This record is the Question Assignment Object.  Each object will contain the Location and Question as well as all of the Answers available for that combination.  This can be used to more readily list the text and names of things without making multiple calls to individual APIs.  The id below is called the baseId in the API calls.  The baseId is formed by taking the CampaignId, QuestionLocationId, LocationId, QuestionId and combining them with underscores to make 147 characters.  E.g.   &lt;campaignId&gt;_&lt;questionLocationId&gt;_&lt;locationId&gt;_&lt;questionId&gt; - that will make a unique id for each Question at a specific Location for a specific Campaign.
 
 <span class="obj-attributes-title">Attributes</span>
 <div class="obj-attribs">
@@ -630,17 +767,33 @@ For any given Location, you may have mutiple Questions selected for that Locatio
 </div>
 
 ### Get Question Assignment
-<span class="api-code">getQuestionAssignment(&lt;baseId&gt;)</span>
-<span class="api-code-descr">Use getQuestionAssignment to retrieve a Question Assignment's Attributes </span>
+<div class="api-descr">Use getQuestionAssignment to retrieve a Question Assignment's Attributes</div>
+<div class="api-code">qranswers.api.getQuestionAssignments(<span class="api-code-param">&lt;baseId&gt;</span>)</div>
+<div class="api-params-lbl">Parameters:</div>
+<div class="api-params">
+    <div class="api-pname">baseId<span class="api-ptype">147 characters</span></div>
+</div>
 ```javascript
     const baseId = "845d11812_xxx";
     const rqaRet = await qranswers.api.getQuestionAssignment(baseId);
 
 ```
 <span class="api-rest">REST API</span>
-https://api.qr-answers.com/v1/questionassignments/:baseId
+<div class="curl-box">
+<pre>
+<code class="curl-code">curl -G https://api.qr-answers.com/v1/questionassignments/:baseId \</code>
+<code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
+</pre>
+</div>
 
 ### List Question Assignments
+<div class="api-descr">Use getQuestionAssignmentList to retrieve an array of all QuestionAssignments for a Campaign</div>
+<div class="api-code">qranswers.api.getQuestionAssignmentList(<span class="api-code-param">&lt;campaignId&gt;</span>)</div>
+<div class="api-params-lbl">Parameters:</div>
+<div class="api-params">
+    <div class="api-pname">campaignId<span class="api-ptype">36 characters</span></div>
+</div>
+
   ```
   // QuestionAssignments are retrieved based on a Campaign.  There are multiple locations for a campaign and there are potentially multiple questions at a location
   const fetchQuestionAssignments = async (questionId) => {
@@ -658,7 +811,14 @@ https://api.qr-answers.com/v1/questionassignments/:baseId
   };
   ```
 <span class="api-rest">REST API</span>
-https://api.qr-answers.com/v1/questionassignments/list/:campaignId
+<div class="curl-box">
+<pre>
+<code class="curl-code">curl -G https://api.qr-answers.com/v1/questionassignments/list/:baseId \</code>
+<code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
+</pre>
+</div>
+
+<div style="margin-top: 80px"></div>
 
 ## The Response Object
 
@@ -691,17 +851,34 @@ For any given Location, you may have mutiple Questions selected for that Locatio
 </div>
 
 ### Get Response
-<span class="api-code">getResponse(&lt;baseId&gt;)</span>
-<span class="api-code-descr">Use getResponse to retrieve a list of Responses Objects for each Answer</span>
+<div class="api-descr">Use getResponse to retrieve a list of Responses Objects for each Answer</div>
+<div class="api-code">qranswers.api.getResponse(<span class="api-code-param">&lt;baseId&gt;</span>)</div>
+<div class="api-params-lbl">Parameters:</div>
+<div class="api-params">
+    <div class="api-pname">baseId<span class="api-ptype">147 characters</span></div>
+</div>
+
 ```javascript
     const baseId = "845d11812_xxx";
     const rqaRet = await qranswers.api.getResponse(baseId);
 
 ```
 <span class="api-rest">REST API</span>
-https://api.qr-answers.com/v1/responses/:baseId
+<div class="curl-box">
+<pre>
+<code class="curl-code">curl -G https://api.qr-answers.com/v1/responses/:baseId \</code>
+<code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
+</pre>
+</div>
 
 ### List Responses
+<div class="api-descr">Use getResponseList to retrieve an array of all Responses for a Campaign</div>
+<div class="api-code">qranswers.api.getResponseList(<span class="api-code-param">&lt;campaignId&gt;</span>)</div>
+<div class="api-params-lbl">Parameters:</div>
+<div class="api-params">
+    <div class="api-pname">campaignId<span class="api-ptype">36 characters</span></div>
+</div>
+
   ```
   // Responses are retrieved based on a Campaign.  There are multiple locations for a campaign and there are potentially multiple questions at a location
   const fetchResponses = async (campaignId) => {
@@ -719,8 +896,15 @@ https://api.qr-answers.com/v1/responses/:baseId
   };
   ```
 <span class="api-rest">REST API</span>
-https://api.qr-answers.com/v1/responses/list/:campaignId
-  
+<div class="curl-box">
+<pre>
+<code class="curl-code">curl -G https://api.qr-answers.com/v1/responses/list/:campaignId \</code>
+<code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
+</pre>
+</div>
+
+<div style="margin-top: 80px"></div>
+ 
 ## The Response Details Object
 
 Please read the [Project Concept](../../index.html#project-concept---important) to familiarize yourself with how Projects, Campaigns, Locations and Questions interract.
@@ -835,17 +1019,34 @@ In addition, you should look at the [Dashboards](./dashboard.html) documentation
 </div>
 
 ### Get Response Details
-<span class="api-code">getResponseDetails(&lt;baseId&gt;)</span>
-<span class="api-code-descr">Use getResponseDetails to retrieve the question assignments and responses array</span>
+<div class="api-descr">Use getResponseDetails to retrieve the question assignments and responses array</div>
+<div class="api-code">qranswers.api.getResponseDetails(<span class="api-code-param">&lt;baseId&gt;</span>)</div>
+<div class="api-params-lbl">Parameters:</div>
+<div class="api-params">
+    <div class="api-pname">baseId<span class="api-ptype">147 characters</span></div>
+</div>
+
 ```javascript
     const baseId = "845d11812_xxx";
     const rqaRet = await qranswers.api.getResponseDetails(baseId);
 
 ```
 <span class="api-rest">REST API</span>
-https://api.qr-answers.com/v1/responsedetails/:baseId
+<div class="curl-box">
+<pre>
+<code class="curl-code">curl -G https://api.qr-answers.com/v1/responsedetails/:baseId \</code>
+<code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
+</pre>
+</div>
 
 ### List Response Details
+<div class="api-descr">Use getResponseDetailsList to retrieve an array of all Response Details for a Campaign</div>
+<div class="api-code">qranswers.api.getResponseDetailsList(<span class="api-code-param">&lt;campaignId&gt;</span>)</div>
+<div class="api-params-lbl">Parameters:</div>
+<div class="api-params">
+    <div class="api-pname">campaignId<span class="api-ptype">36 characters</span></div>
+</div>
+
   ```
   // ResponseDetails are retrieved based on a Campaign.  There are multiple locations for a campaign and there are potentially multiple questions at a location
   const fetchResponseDetails = async (questionId) => {
@@ -863,4 +1064,9 @@ https://api.qr-answers.com/v1/responsedetails/:baseId
   };
   ```
 <span class="api-rest">REST API</span>
-https://api.qr-answers.com/v1/responsedetails/list/:campaignId
+<div class="curl-box">
+<pre>
+<code class="curl-code">curl -G https://api.qr-answers.com/v1/responsedetails/list/:campaignId \</code>
+<code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
+</pre>
+</div>
