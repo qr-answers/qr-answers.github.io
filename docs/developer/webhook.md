@@ -35,7 +35,7 @@ A webhook is used to receive events from the qr-answers backend.  You may select
 
 You need to have a Secret Key as well.  Keep this Secret Key guarded so no one else can access it.  It is used to package the data that is sent to your webhook so you can verify that the sender is really qr-answers.com.   If your Secret Key is compromised, generate a new one by choosing the <span class="inline-button">Roll Secret Key</span> button.
 
-An easy configuraiton to create a webhook is to use Express.  You can setup a simple post route that will receive the messages from qr-answers.com.  You also need to install the qranswers module from npm.  This will allow you to verify the payload sent to you by calling the ```constructEvent``` method - which verifies the integrity of the package by utilizing your Secret Key.
+An easy configuraiton to create a webhook is to use Express.  You can setup a simple post route that will receive the messages from qr-answers.com.  You also need to install the qranswers module from npm.  This will allow you to verify the payload sent to you by calling the ```constructEvent``` method - which verifies the integrity of the package by utilizing your Secret Key.  Notice we do not 'hard code' the keys into the application.  They are set as Environment variables so that they aren't generally available for someone to access.  We use AWS Lambda to host the Webhooks - which allow you to set local Environment variables.
 
 Here is a simple setup using Amplify and an AWS Lambda for the webhook:
 
@@ -108,11 +108,11 @@ module.exports = app
 
 ```
 
-Below is the format of the 'vote.evResponseVote' event data:
+The 'vote.evResponseVote' event is sent when someone scans a QR code Answer for one of your Questions.  You will receive the baseId of the specific Question (scoped by Campaign and Location) as well as the projectId and answerId.  In addition, you will receive the *aggregate* count of votes received for that Answer.  Note this is the aggregate amount of votes received for that Answer vs a single up or down vote.  You may also receive detailed information about each vote processed by registering for the 'event.evRawVote' as described below. Below is the format of the 'vote.evResponseVote' event data:
 
 ```
 {
-  id: 'vote',
+  id: f157583d-3a2e-fa44-23eb-ec264dd6d697,
   object: 'event',
   api_version: '2023-09-18',
   created: 1701406737583,
@@ -130,11 +130,27 @@ Below is the format of the 'vote.evResponseVote' event data:
 }
 ```
 
+The 'vote.evRawVote' is sent to your Webhook (provided you register for it under the [Developer accordion](../menu/home_menu.html#webhooks)).  This is an individual vote that may have a vote of +1 or -1.  You may get a -1 value here if your Campaign is set to log only a single vote for an end user.  If the person has already voted (say for "Yes"), but they want to change their answer to "No", when they scan the "No" you will get a 'vote.evRawvote' for the -1 vote for "Yes" *and* a +1 vote for "No".  
+
+There are several values here that may be useful.  The data.object value will be 'evRawVote'.  The clientId will be the clientId assigned to your master account.  The projectId is the identifier for the particular Project that the scan references.  The questionLocationId is the identifier that scopes the Question to a particular Location in a particular Campaign. (Keep in mind, you can use the same Question in multiple Locations}. The locationId, questionId, answerId are identifiers for those objects.  The schedule will reflect what schedule was chosen for the Campaign Settings and conditionally the current date/time information. Where a hash mark is shown (#), the character is actually the hash mark (#). The schedule will be one of:  
+
+hour#YYYYMMDD#hh - where YYYY is the year; MM is the two digit month; DD is the two digit day; hh is the hour 0-23
+
+day#YYYYMMDD - where YYYY is the year; MM is the 2 digit month; DD is the two digit day
+
+onetime# - there are no fields after the #
+
+nolimit# - there are no fields after the #
+
+none# - there are no fields after the #
+
+The userId is an arbitrary value assigned to the user.  If the same user scans another QR code, you may or may not get the same userId.  The eventId is an arbitrary value assigned to the event that QRAnswers uses internally.
+
 Below is the format of the 'vote.evRawVote' data:
 
 ```
 {
-  id: 'vote',
+  id: 'd3875f15-3ea2-44fa-be23-976dd111ab',
   object: 'event',
   api_version: '2023-09-18',
   created: 1701406739643,

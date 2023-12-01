@@ -26,22 +26,26 @@ nav_order: 1
 </details>
 </div>
 
-## npm install qranswers
+There are two (2) API methodologies you may use when programming for QR-Answers.  There is a javsacript module called qranswers that you may download and use from npm.  Or, you may directly access the REST APIs as described in the 2 sections below.  The format of the documentation below starts with a desription of an Object, then the attributes and how to access that object through the varying APIs.
+
+## qranswers Module Usage
 
 To install the javascript package as part of your application, use:
 
 ```npm install qranswers```
 
-## qranswers Module Usage
-
 You will need your API key from the Developer accordion of [Manage Plan](../menu/home_menu.html#developer)
 
-To initialize the qranswers module, you will need to have your API Key and load the module like this:
+To initialize the qranswers module, you will need to have your Standard Keys - API Key and load the module like the below:
+
 
 ```
 const apiKey = "api_e1238.....";
 const qranswers = require("qranswers")(apiKey)
 ```
+
+{: .warning }
+> Do not use your Secret Key above, that is for use with Webhooks
 
 <div style="margin-top: 80px"></div>
 
@@ -177,7 +181,7 @@ const [projects, setProjects] = useState(null);
 ```
 
 ## REST API 
-The REST API can be used by using CURL or some other fetching mechanism to access the REST APIs.  You must pass your Authorization token (the API Key under Standard Keys from [here](../menu/home_menu.html#developer)).   The base URL is https://api.qr-answers.com/v1/.  The documentation below uses an Express style notation for the parameter(s) to pass to the REST call.  For example, if you are trying to list Campaigns for a particular Project, the parameter to the /campaigns/list/ call is the projectId.  The notation in the call will display :projectId for the parameter.  For example:
+The REST API can be used by using the HTTPS protocol and CURL or some other fetching mechanism to access the REST APIs content.  You must pass your Authorization token (the API Key under Standard Keys from [here](../menu/home_menu.html#developer)).  Using CURL, you would add the -H Authorization='<YOUR-API-KEY'> header.  The base REST API URL is https://api.qr-answers.com/v1/.  The documentation below uses an Express style notation for the parameter(s) to pass to the REST call.  For example, if you are trying to list Campaigns for a particular Project, the parameter to the /campaigns/list/ call is the projectId.  The notation in the call will display :projectId for the parameter.  For example:
 
 <span class="api-rest">REST API</span>
 <div class="curl-box">
