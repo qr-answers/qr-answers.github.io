@@ -790,7 +790,7 @@ For any given Location, you may have mutiple Questions selected for that Locatio
 </pre>
 </div>
 
-### List Question Assignments
+### List Question Assignments (by Campaign)
 <div class="api-descr">Use getQuestionAssignmentList to retrieve an array of all QuestionAssignments for a Campaign</div>
 <div class="api-code">qranswers.api.getQuestionAssignmentList(<span class="api-code-param">&lt;campaignId&gt;</span>)</div>
 <div class="api-params-lbl">Parameters:</div>
@@ -800,7 +800,7 @@ For any given Location, you may have mutiple Questions selected for that Locatio
 
   ```
   // QuestionAssignments are retrieved based on a Campaign.  There are multiple locations for a campaign and there are potentially multiple questions at a location
-  const fetchQuestionAssignments = async (questionId) => {
+  const fetchQuestionAssignments = async (campaignId) => {
     setFetchingQuestionAssignments({...fetchingQuestionAssignments, [campaignId]: true});
     const getRes = await qranswers.api.getQuestionAssignmentList(campaignId);
     if (getRes.data) {
@@ -817,7 +817,39 @@ For any given Location, you may have mutiple Questions selected for that Locatio
 <span class="api-rest">REST API</span>
 <div class="curl-box">
 <pre>
-<code class="curl-code">curl -G https://api.qr-answers.com/v1/questionassignments/list/:baseId \</code>
+<code class="curl-code">curl -G https://api.qr-answers.com/v1/questionassignments/list/:campaignId \</code>
+<code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
+</pre>
+</div>
+
+### List Question Assignments (by Project)
+<div class="api-descr">Use getQuestionAssignmentListByProject to retrieve an array of all QuestionAssignments for an entire Project</div>
+<div class="api-code">qranswers.api.getQuestionAssignmentListByProject(<span class="api-code-param">&lt;projectId&gt;</span>)</div>
+<div class="api-params-lbl">Parameters:</div>
+<div class="api-params">
+    <div class="api-pname">projectId<span class="api-ptype">36 characters</span></div>
+</div>
+
+  ```
+  // QuestionAssignments are retrieved based on a Campaign (see above) or Project.  There are multiple locations for a campaign and there are potentially multiple questions at a location
+  const fetchQuestionAssignmentsByProject = async (projectId) => {
+    setFetchingQuestionAssignmentsByProject({...fetchingQuestionAssignmentsByProject, [projectId]: true});
+    const getRes = await qranswers.api.getQuestionAssignmentListByProject(projectId);
+    if (getRes.data) {
+      var newList = {...questionAssignmentsByProject};
+      newList[projecctId] = getRes.data;
+      newList[projectId].visible = true;
+      setQuestionAssignmentsByProject(newList);
+    } else {
+      console.log(getRes);
+    }
+    setFetchingQuestionAssignmentsByProject({...fetchingQuestionAssignmentsByProject, [projectId]: false});
+  };
+  ```
+<span class="api-rest">REST API</span>
+<div class="curl-box">
+<pre>
+<code class="curl-code">curl -G https://api.qr-answers.com/v1/questionassignments/listbyproject/:projectId \</code>
 <code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
 </pre>
 </div>
@@ -875,7 +907,7 @@ For any given Location, you may have mutiple Questions selected for that Locatio
 </pre>
 </div>
 
-### List Responses
+### List Responses (by Campaign)
 <div class="api-descr">Use getResponseList to retrieve an array of all Responses for a Campaign</div>
 <div class="api-code">qranswers.api.getResponseList(<span class="api-code-param">&lt;campaignId&gt;</span>)</div>
 <div class="api-params-lbl">Parameters:</div>
@@ -903,6 +935,38 @@ For any given Location, you may have mutiple Questions selected for that Locatio
 <div class="curl-box">
 <pre>
 <code class="curl-code">curl -G https://api.qr-answers.com/v1/responses/list/:campaignId \</code>
+<code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
+</pre>
+</div>
+
+### List Responses (by Project)
+<div class="api-descr">Use getResponseListByProject to retrieve an array of all Responses for an entire Project</div>
+<div class="api-code">qranswers.api.getResponseListByProject(<span class="api-code-param">&lt;projectId&gt;</span>)</div>
+<div class="api-params-lbl">Parameters:</div>
+<div class="api-params">
+    <div class="api-pname">projectId<span class="api-ptype">36 characters</span></div>
+</div>
+
+  ```
+  // Responses are retrieved based on a Project.  There may be multiple Campaigns and multiple Locations for a Campaign and there are potentially multiple Questions at a Location. Retrieving Responses for an entire Project is less costly than looping through all Campaigns and retrieving them by getResponseList (by campaign)
+  const fetchProjectResponses = async (campaignId) => {
+    setFetchingProjectResponseListByProject({...fetchingProjectResponseListByProject, [projectId]: true});
+    const getRes = await qranswers.api.getResponseListByProject(projectId);
+    if (getRes.data) {
+      var newList = {...responseListByProject};
+      newList[projectId] = getRes.data;
+      newList[projectId].visible = true;
+      setResponseListByProject(newList);
+    } else {
+      console.log(getRes);
+    }
+    setFetchingProjectResponseListByProject({...fetchingProjectResponseListByProject, [projectId]: false});
+  };
+  ```
+<span class="api-rest">REST API</span>
+<div class="curl-box">
+<pre>
+<code class="curl-code">curl -G https://api.qr-answers.com/v1/responses/listbyproject/:projectId \</code>
 <code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
 </pre>
 </div>
@@ -1043,7 +1107,7 @@ In addition, you should look at the [Dashboards](./dashboard.html) documentation
 </pre>
 </div>
 
-### List Response Details
+### List Response Details (by Campaign)
 <div class="api-descr">Use getResponseDetailsList to retrieve an array of all Response Details for a Campaign</div>
 <div class="api-code">qranswers.api.getResponseDetailsList(<span class="api-code-param">&lt;campaignId&gt;</span>)</div>
 <div class="api-params-lbl">Parameters:</div>
@@ -1053,7 +1117,7 @@ In addition, you should look at the [Dashboards](./dashboard.html) documentation
 
   ```
   // ResponseDetails are retrieved based on a Campaign.  There are multiple locations for a campaign and there are potentially multiple questions at a location
-  const fetchResponseDetails = async (questionId) => {
+  const fetchResponseDetails = async (campaignId) => {
     setFetchingResponseDetails({...fetchingResponseDetails, [campaignId]: true});
     const getRes = await qranswers.api.getResponseDetailsList(campaignId);
     if (getRes.data) {
@@ -1071,6 +1135,38 @@ In addition, you should look at the [Dashboards](./dashboard.html) documentation
 <div class="curl-box">
 <pre>
 <code class="curl-code">curl -G https://api.qr-answers.com/v1/responsedetails/list/:campaignId \</code>
+<code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
+</pre>
+</div>
+
+### List Response Details (by Project)
+<div class="api-descr">Use getResponseDetailsListByProject to retrieve an array of all Response Details for an entire Project</div>
+<div class="api-code">qranswers.api.getResponseDetailsListByProject(<span class="api-code-param">&lt;projectId&gt;</span>)</div>
+<div class="api-params-lbl">Parameters:</div>
+<div class="api-params">
+    <div class="api-pname">projectId<span class="api-ptype">36 characters</span></div>
+</div>
+
+  ```
+  // ResponseDetails can be retrieved by Campaign (above) or Project.  There may be multiple Campaigns with multiple Locations for a Campaign and there are potentially multiple Questions at a Location
+  const fetchResponseDetailsByProject = async (projectId) => {
+    setFetchingResponseDetailsByProject({...fetchingResponseDetailsByProject, [projectId]: true});
+    const getRes = await qranswers.api.getResponseDetailsListByProject(projectId);
+    if (getRes.data) {
+      var newList = {...responseDetailsByProject};
+      newList[projectId] = getRes.data;
+      newList[projectId].visible = true;
+      setResponseDetailsByProject(newList);
+    } else {
+      console.log(getRes);
+    }
+    setFetchingResponseDetailsByProject({...fetchingResponseDetailsByProject, [projectId]: false});
+  };
+  ```
+<span class="api-rest">REST API</span>
+<div class="curl-box">
+<pre>
+<code class="curl-code">curl -G https://api.qr-answers.com/v1/responsedetails/listbyproject/:projectId \</code>
 <code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
 </pre>
 </div>
