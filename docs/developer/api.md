@@ -15,7 +15,7 @@ nav_order: 1
 <div class="sticky-gotop">
 <span class="inline-icon"><i class="fa-solid fa-arrow-up"></i></span>
 </div>
-<div class="sticky-right">
+<div class="sticky-right" style="overflow-y: scroll; max-height: 90%">
 <details markdown="block">
   <summary>
     Quick Links
@@ -73,9 +73,12 @@ const qranswers = require("qranswers")(apiKey)
 </div>
 
 ### Subscriptions
-You may subscribe to real-time Responses in your application by initializing the subscription module and subscribing to the Responses you are looking for.  A Response is generated when someone scans the QR code for your answer.  The Response consists of the information as to what Project, Campaign, Location, Question and Answer was chosen - this is the [Subscription Response Object](#the-subscription-response-object) described above..  Remember that an answer is scoped to a particular Campaign, Location and Question. Since the Question can be posted in more than one location, the unique identifier (we call it the baseId) is formed by this pattern:  &lt;campaignId&gt;_&lt;questionLoationId&gt;_&lt;locationId&gt;_&lt;questionId&gt;.  You may subscribe to Responses for all of your Campaigns, or you may subscribe to a single Question at a particular Location in a particular Campaign.  If you are using React (our recommendation), the pattern to follow is to subsribe and cleanup as follows (this code subscribes to all Responses):
+You may subscribe to real-time Responses in your application by initializing the subscription module and subscribing to the Responses you are looking for.  A Response is generated when someone scans the QR code for your answer.  The Response consists of the information as to what Project, Campaign, Location, Question and Answer was chosen - this is the [Subscription Response Object](#the-subscription-response-object) described above..  Remember that an answer is scoped to a particular Campaign, Location and Question. Since the Question can be posted in more than one location, the unique identifier (we call it the baseId) is formed by this pattern:  &lt;campaignId&gt; _ &lt;questionLoationId&gt; _ &lt;locationId&gt; _ &lt;questionId&gt;.  You may subscribe to Responses for all of your Campaigns, or you may subscribe to a single Question at a particular Location in a particular Campaign.  If you are using React (our recommendation), the pattern to follow is to subscribe and cleanup as follows (this code subscribes to all Responses):
 
 ```javascript
+const apiKey = "api_e1238.....";
+const qranswers = require("qranswers")(apiKey)
+
 const [qrInited, setQrInited] = useState(false);
 
 useEffect(() => {
@@ -99,7 +102,7 @@ useEffect(() => {
 }, [])
 ```
 
-To subscribe to an individual Question's answers/Responses, follow this pattern (the baseId can be determined by going to the Developer section of the app and selecting <span class="form-label">Find Specific Question for API</span>, the clicking the 'copy' icon to get the baseId.  use the baseId below):
+To subscribe to an individual Question's answers/Responses, follow this pattern (the baseId can be determined by going to the Developer section of the app and selecting <span class="form-label">Find Specific Question for API</span>, then clicking the 'copy' icon to get the baseId.  Then use the baseId in the below code):
 
   <p align="center" class="screen-shot">
   <img class="image-border-qr" alt="find specific question" src="../../assets/images/find_specific_question.png">
@@ -107,6 +110,9 @@ To subscribe to an individual Question's answers/Responses, follow this pattern 
 
 
 ```javascript
+const apiKey = "api_e1238.....";
+const qranswers = require("qranswers")(apiKey)
+
 const baseId = "6dbbffc8-4742xxxx_54a2d82xxxx_f366dexxxx_f76c45axxxx";
 
 const [qrInited, setQrInited] = useState(false);
@@ -137,7 +143,7 @@ useEffect(() => {
 
 ## qranswers module API 
 
-The API wrapper in the qranswers module makes calls to the REST APIs of qr-answers.com.  The base URL for all REST APIs is ```https://api.qr-answers.com/v1```.  For example, to get the list of Locations for a given Project ID ("56abd812_xxx"), the wrapper fetches ```https://api.qr-answers.com/v1/locations/list/56abd812_xxx``` with ```Authorization``` header of the API Key.  For example:
+The API wrapper in the qranswers module makes calls to the REST APIs of qr-answers.com.  The base URL for all REST APIs is ```https://api.qr-answers.com/v1```.  For example, to get the list of Locations for a given Project ID ("56abd812_xxx"), the wrapper fetches ```https://api.qr-answers.com/v1/locations/list/56abd812_xxx``` with ```Authorization``` header of the API Key.  The return of all module calls is an object, for example ```obj```.  To check for success, look for ```obj.data```.  If there is an error, you will get an error field, e.g. ```obj.error```.  For example:
 
 {: .note }
 > IDs are 36 characters, for example: "6dbbffc8-4742-4bb5-9732-405c18965da1".  Rather than using real IDs, in our examples, we shorten the IDs to have _xxxx instead of all 36 characters.
@@ -153,6 +159,8 @@ try {
         }
     })
     const json = await result.json();
+    // If the call succeeds, json.data[] will be an array of the returned data values
+    // If the call fails, json.error will contain an error message.
     return json;
 } catch (err) {
     console.error(err);
@@ -245,9 +253,13 @@ You would replace the ':projectId' with the Project Id you would like to access.
 <div class="api-params">
     <div class="api-pname">projectId<span class="api-ptype">36 characters</span></div>
 </div>
+<div class="api-params-lbl">Returns:</div>
+<div class="api-params">
+    <div class="api-pname">result<span class="api-ptype">object - result.error if there is an error.  result.data[0] is a Project Object if the call succeeds</span></div>
+</div>
 ```javascript
     const projectId = "56abd812_xxx";
-    const projRet = await qranswers.api.getProject(projectId);
+    const result = await qranswers.api.getProject(projectId);
 
 ```
 <span class="api-rest">REST API</span>
@@ -264,6 +276,10 @@ You would replace the ':projectId' with the Project Id you would like to access.
 <div class="api-params-lbl">Parameters:</div>
 <div class="api-params">
     <div class="api-pname">none</div>
+</div>
+<div class="api-params-lbl">Returns:</div>
+<div class="api-params">
+    <div class="api-pname">result<span class="api-ptype">object - result.error if there is an error.  result.data[...] array of Project Objects if the call succeeds</span></div>
 </div>
 
 ```jsx
@@ -344,6 +360,10 @@ You would replace the ':projectId' with the Project Id you would like to access.
 <div class="api-params">
     <div class="api-pname">campaignId<span class="api-ptype">36 characters</span></div>
 </div>
+<div class="api-params-lbl">Returns:</div>
+<div class="api-params">
+    <div class="api-pname">result<span class="api-ptype">object - result.error if there is an error.  result.data[0] is a Campaign Object if the call succeeds</span></div>
+</div>
 
 ```javascript
     const campaignId = "193ab812_xxx";
@@ -364,6 +384,10 @@ You would replace the ':projectId' with the Project Id you would like to access.
 <div class="api-params-lbl">Parameters:</div>
 <div class="api-params">
     <div class="api-pname">projectId<span class="api-ptype">36 characters</span></div>
+</div>
+<div class="api-params-lbl">Returns:</div>
+<div class="api-params">
+    <div class="api-pname">result<span class="api-ptype">object - result.error if there is an error.  result.data[...] array of Campaign Objects if the call succeeds</span></div>
 </div>
 
 ```
@@ -441,6 +465,10 @@ You would replace the ':projectId' with the Project Id you would like to access.
 <div class="api-params">
     <div class="api-pname">locationId<span class="api-ptype">36 characters</span></div>
 </div>
+<div class="api-params-lbl">Returns:</div>
+<div class="api-params">
+    <div class="api-pname">result<span class="api-ptype">object - result.error if there is an error.  result.data[0] is a Location Object if the call succeeds</span></div>
+</div>
 
 ```javascript
     const locationId = "922ab812_xxx";
@@ -461,6 +489,10 @@ You would replace the ':projectId' with the Project Id you would like to access.
 <div class="api-params-lbl">Parameters:</div>
 <div class="api-params">
     <div class="api-pname">projectId<span class="api-ptype">36 characters</span></div>
+</div>
+<div class="api-params-lbl">Returns:</div>
+<div class="api-params">
+    <div class="api-pname">result<span class="api-ptype">object - result.error if there is an error.  result.data[...] array of Location Objects if the call succeeds</span></div>
 </div>
   ```
   // Multiple Locations per Project Id.
@@ -534,6 +566,10 @@ You would replace the ':projectId' with the Project Id you would like to access.
 <div class="api-params">
     <div class="api-pname">questionId<span class="api-ptype">36 characters</span></div>
 </div>
+<div class="api-params-lbl">Returns:</div>
+<div class="api-params">
+    <div class="api-pname">result<span class="api-ptype">object - result.error if there is an error.  result.data[0] is a Question Object if the call succeeds</span></div>
+</div>
 
 ```javascript
     const questionId = "9a891812_xxx";
@@ -554,6 +590,10 @@ You would replace the ':projectId' with the Project Id you would like to access.
 <div class="api-params-lbl">Parameters:</div>
 <div class="api-params">
     <div class="api-pname">projectId<span class="api-ptype">36 characters</span></div>
+</div>
+<div class="api-params-lbl">Returns:</div>
+<div class="api-params">
+    <div class="api-pname">result<span class="api-ptype">object - result.error if there is an error.  result.data[...] array of Question Objects if the call succeeds</span></div>
 </div>
 
   ```
@@ -648,6 +688,10 @@ You would replace the ':projectId' with the Project Id you would like to access.
 <div class="api-params">
     <div class="api-pname">answerId<span class="api-ptype">36 characters</span></div>
 </div>
+<div class="api-params-lbl">Returns:</div>
+<div class="api-params">
+    <div class="api-pname">result<span class="api-ptype">object - result.error if there is an error.  result.data[0] is an Answer Object if the call succeeds</span></div>
+</div>
 
 ```javascript
     const answerId = "abef11812_xxx";
@@ -669,6 +713,11 @@ You would replace the ':projectId' with the Project Id you would like to access.
 <div class="api-params">
     <div class="api-pname">questionId<span class="api-ptype">36 characters</span></div>
 </div>
+<div class="api-params-lbl">Returns:</div>
+<div class="api-params">
+    <div class="api-pname">result<span class="api-ptype">object - result.error if there is an error.  result.data[...] array of Answer Objects if the call succeeds</span></div>
+</div>
+
   ```
   // Answers are retrieved based on the Question Id
   const fetchAnswers = async (questionId) => {
@@ -777,6 +826,11 @@ For any given Location, you may have mutiple Questions selected for that Locatio
 <div class="api-params">
     <div class="api-pname">baseId<span class="api-ptype">147 characters</span></div>
 </div>
+<div class="api-params-lbl">Returns:</div>
+<div class="api-params">
+    <div class="api-pname">result<span class="api-ptype">object - result.error if there is an error.  result.data[0] is a Question Assignment Object if the call succeeds</span></div>
+</div>
+
 ```javascript
     const baseId = "845d11812_xxx";
     const rqaRet = await qranswers.api.getQuestionAssignment(baseId);
@@ -796,6 +850,10 @@ For any given Location, you may have mutiple Questions selected for that Locatio
 <div class="api-params-lbl">Parameters:</div>
 <div class="api-params">
     <div class="api-pname">campaignId<span class="api-ptype">36 characters</span></div>
+</div>
+<div class="api-params-lbl">Returns:</div>
+<div class="api-params">
+    <div class="api-pname">result<span class="api-ptype">object - result.error if there is an error.  result.data[...] array of Question Assignment Objects if the call succeeds</span></div>
 </div>
 
   ```
@@ -828,6 +886,10 @@ For any given Location, you may have mutiple Questions selected for that Locatio
 <div class="api-params-lbl">Parameters:</div>
 <div class="api-params">
     <div class="api-pname">projectId<span class="api-ptype">36 characters</span></div>
+</div>
+<div class="api-params-lbl">Returns:</div>
+<div class="api-params">
+    <div class="api-pname">result<span class="api-ptype">object - result.error if there is an error.  result.data[...] array of Question Assignment Objects if the call succeeds</span></div>
 </div>
 
   ```
@@ -893,6 +955,10 @@ For any given Location, you may have mutiple Questions selected for that Locatio
 <div class="api-params">
     <div class="api-pname">baseId<span class="api-ptype">147 characters</span></div>
 </div>
+<div class="api-params-lbl">Returns:</div>
+<div class="api-params">
+    <div class="api-pname">result<span class="api-ptype">object - result.error if there is an error.  result.data[0] is a Response Object if the call succeeds</span></div>
+</div>
 
 ```javascript
     const baseId = "845d11812_xxx";
@@ -913,6 +979,10 @@ For any given Location, you may have mutiple Questions selected for that Locatio
 <div class="api-params-lbl">Parameters:</div>
 <div class="api-params">
     <div class="api-pname">campaignId<span class="api-ptype">36 characters</span></div>
+</div>
+<div class="api-params-lbl">Returns:</div>
+<div class="api-params">
+    <div class="api-pname">result<span class="api-ptype">object - result.error if there is an error.  result.data[...] array of Response Objects if the call succeeds</span></div>
 </div>
 
   ```
@@ -945,6 +1015,10 @@ For any given Location, you may have mutiple Questions selected for that Locatio
 <div class="api-params-lbl">Parameters:</div>
 <div class="api-params">
     <div class="api-pname">projectId<span class="api-ptype">36 characters</span></div>
+</div>
+<div class="api-params-lbl">Returns:</div>
+<div class="api-params">
+    <div class="api-pname">result<span class="api-ptype">object - result.error if there is an error.  result.data[...] array of Response Objects if the call succeeds</span></div>
 </div>
 
   ```
@@ -1093,6 +1167,10 @@ In addition, you should look at the [Dashboards](./dashboard.html) documentation
 <div class="api-params">
     <div class="api-pname">baseId<span class="api-ptype">147 characters</span></div>
 </div>
+<div class="api-params-lbl">Returns:</div>
+<div class="api-params">
+    <div class="api-pname">result<span class="api-ptype">object - result.error if there is an error.  result.data[0] is a Response Details Object if the call succeeds</span></div>
+</div>
 
 ```javascript
     const baseId = "845d11812_xxx";
@@ -1113,6 +1191,10 @@ In addition, you should look at the [Dashboards](./dashboard.html) documentation
 <div class="api-params-lbl">Parameters:</div>
 <div class="api-params">
     <div class="api-pname">campaignId<span class="api-ptype">36 characters</span></div>
+</div>
+<div class="api-params-lbl">Returns:</div>
+<div class="api-params">
+    <div class="api-pname">result<span class="api-ptype">object - result.error if there is an error.  result.data[...] array of Response Details Objects if the call succeeds</span></div>
 </div>
 
   ```
@@ -1145,6 +1227,10 @@ In addition, you should look at the [Dashboards](./dashboard.html) documentation
 <div class="api-params-lbl">Parameters:</div>
 <div class="api-params">
     <div class="api-pname">projectId<span class="api-ptype">36 characters</span></div>
+</div>
+<div class="api-params-lbl">Returns:</div>
+<div class="api-params">
+    <div class="api-pname">result<span class="api-ptype">object - result.error if there is an error.  result.data[...] array of Response Details Objects if the call succeeds</span></div>
 </div>
 
   ```
