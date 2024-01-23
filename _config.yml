@@ -25,7 +25,7 @@ callouts:
     title: Warning
     color: red
 
-footer_content: "Copyright &copy; 2023 QR-Answers.  <a href=\"https://qr-answers.com/tandc.txt\">Terms and Conditions</a>"
+footer_content: "Copyright &copy; 2023,2024 QR-Answers.  <a href=\"https://qr-answers.com/tandc.txt\">Terms and Conditions</a>"
 
 # Footer last edited timestamp
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
