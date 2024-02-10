@@ -832,7 +832,7 @@ For any given Location, you may have mutiple Questions selected for that Locatio
 </div>
 
 ```javascript
-    const baseId = "845d11812_xxx";
+    const baseId = "6dbbffc8-4742xxxx_54a2d82xxxx_f366dexxxx_f76c45axxxx";
     const rqaRet = await qranswers.api.getQuestionAssignment(baseId);
 
 ```
@@ -961,7 +961,7 @@ For any given Location, you may have mutiple Questions selected for that Locatio
 </div>
 
 ```javascript
-    const baseId = "845d11812_xxx";
+    const baseId = "6dbbffc8-4742xxxx_54a2d82xxxx_f366dexxxx_f76c45axxxx";
     const rqaRet = await qranswers.api.getResponse(baseId);
 
 ```
@@ -1173,7 +1173,7 @@ In addition, you should look at the [Dashboards](./dashboard.html) documentation
 </div>
 
 ```javascript
-    const baseId = "845d11812_xxx";
+    const baseId = "6dbbffc8-4742xxxx_54a2d82xxxx_f366dexxxx_f76c45axxxx";
     const rqaRet = await qranswers.api.getResponseDetails(baseId);
 
 ```
@@ -1253,6 +1253,103 @@ In addition, you should look at the [Dashboards](./dashboard.html) documentation
 <div class="curl-box">
 <pre>
 <code class="curl-code">curl -G https://api.qr-answers.com/v1/responsedetails/listbyproject/:projectId \</code>
+<code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
+</pre>
+</div>
+
+
+## Reset Notification Current Count
+
+You may reset the Notification "Current" counter to zero (0) by calling the resetNotificationAggregate API.  This is typically accessed after you receive a webhook or email notification that some event has happend - like you received 100 responses to "How was our service today?".
+
+Please read the Notifcations section of the Help file to understand how this API may be used.  In short, your webhook may receive a Notification and this API allows you to reset the Current counter for that Notification.  For example, you may receive a webhook notification that you've received 20 "Bad" responses to "How am I driving?" for one of your drivers.  You may want to take an action and reset their counter to see if they continue to get bad responses.
+
+### Reset Current Counter
+<div class="api-descr">Use resetNotificationAggregate to reset the Current counter for the designated item ID to zero (0)</div>
+<div class="api-code">qranswers.api.resetNotificationAggregate(<span class="api-code-param">&lt;id&gt;</span>, <span class="api-code-param">&lt;idType&gt;</span>)</div>
+<div class="api-params-lbl">Parameters:</div>
+<div class="api-params">
+    <div class="api-pname">id<span class="api-ptype">36 or 73 characters</span></div>
+    <div class="obj-descr">The id is the identifier for the given Notification item.  You may reset the Current Notification count for items at the Project (id=projectId), Campaign (id=campaignId), Question (id=questionId), Location (id=locationid), or QuestionLocation (specific question at a specfic location, id=questLocationId_questionId)</div>
+    <div class="api-pname">idType<span class="api-ptype">'p', 'g', 'l', 'q', or 'ql'</span></div>
+        <div class="obj-descr">
+        The idType corresponds to the id chosen in the id parameter. Project (idType='p'), Campaign (idType='g'), Location (idType='l'), Question (idType='q'), QuestionLocation (idType = 'ql')
+        </div>
+</div>
+<div class="api-params-lbl">Returns:</div>
+<div class="api-params">
+    <div class="api-pname">result<span class="api-ptype">object - result.error if there is an error.  result.success if successful</span></div>
+</div>
+
+```javascript
+    const questionId = "845d11812_xxx";
+    const idType = 'q';
+    const rqaRet = await qranswers.api.resetNotificationAggregate(questionId, idType);
+
+```
+<span class="api-rest">REST API</span>
+<div class="curl-box">
+<pre>
+<code class="curl-code">curl -X PUT https://api.qr-answers.com/v1/notifications/aggregate/:id/:idType \</code>
+<code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
+</pre>
+</div>
+
+
+## Reset Response Counts
+
+You may reset the Response counts for all of a Campaign, or just an individual Question at a specific Location.  This effectively clears the response counts that are displayed under the Results tab or by the Dashboard component.  For example, if you have a Question at one of your gas stations that asks "How was your service today?" - and you've received 150 responses of "Good" and 30 responses of "Not so good" - perhaps you made some corrections and would like to know how you are doing from then forward.  You could create a new Campaign - which would start your counts at 0; or, you can reset the "Good" and "Not so good" counters to 0 by calling this API - and not create a new Campaign.
+
+You may reset all counters for the entire Campaign (perhaps you have 10 questions in a Campaign and don't want to individually reset them), or you can individually reset the Response counts to 0 for a specific Question at a specific Location - by its baseId.
+
+
+### Reset Responses for a Campaign
+<div class="api-descr">Use resetCampaignResponses to reset the response counts to zero (0) for all Questions at all Locations</div>
+<div class="api-code">qranswers.api.resetCampaignResponses(<span class="api-code-param">&lt;campaignId&gt;</span>)</div>
+<div class="api-params-lbl">Parameters:</div>
+<div class="api-params">
+    <div class="api-pname">campaignId<span class="api-ptype">36 characters</span></div>
+</div>
+<div class="api-params-lbl">Returns:</div>
+<div class="api-params">
+    <div class="api-pname">result<span class="api-ptype">object - result.error if there is an error.  result.success if successful</span></div>
+</div>
+
+```javascript
+    const campaignId = "132431812_xxx";
+    const rqaRet = await qranswers.api.reseCampaignResponses(camnpaignId);
+
+```
+<span class="api-rest">REST API</span>
+<div class="curl-box">
+<pre>
+<code class="curl-code">curl -X PUT https://api.qr-answers.com/v1/responses/campaign/:campaignId \</code>
+<code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
+</pre>
+</div>
+
+
+### Reset Responses for a Specific Question at a Specific Location
+<div class="api-descr">Use resetQuesitonAssignmentResponses to reset the response counts to zero (0) for a Question at a specfic Location (QuestionAssignment)</div>
+<div class="api-code">qranswers.api.resetQuestionAssignmentResponses(<span class="api-code-param">&lt;baseId&gt;</span>)</div>
+<div class="api-params-lbl">Parameters:</div>
+<div class="api-params">
+    <div class="api-pname">baseId<span class="api-ptype">147 characters</span></div>
+</div>
+<div class="api-params-lbl">Returns:</div>
+<div class="api-params">
+    <div class="api-pname">result<span class="api-ptype">object - result.error if there is an error.  result.success if successful</span></div>
+</div>
+
+```javascript
+    const baseId = "6dbbffc8-4742xxxx_54a2d82xxxx_f366dexxxx_f76c45axxxx";
+    const rqaRet = await qranswers.api.resetQuestionAssignmentResponses(baseId);
+
+```
+<span class="api-rest">REST API</span>
+<div class="curl-box">
+<pre>
+<code class="curl-code">curl -X PUT https://api.qr-answers.com/v1/responses/questionassignments/:baseId \</code>
 <code class="curl-code">  -H Authorization='<YOUR-API-KEY'></code>
 </pre>
 </div>
