@@ -49,21 +49,24 @@ The default display of the Project Details page is to open the <span class="inli
    </p>
 
 ### Edit Project
-As you can see above, the Project Details screen has an edit pencil <span class="inline-icon"><i class="fa-solid fa-pen-to-square"></i></span> icon in the upper right. Clicking on that will bring up the Edit Project screen.
+As you can see above, the Project Details screen has an edit pencil <span class="inline-icon"><i class="fa-solid fa-pen-to-square"></i></span> icon in the upper right. Clicking on that will bring up the Edit Project screen.  There are two sections related to Projects - Basic Properties and Notifications.
 
    <p align="center" class="screen-shot">
    <img class="image-border" alt="Edit project basic attributes" src="../../assets/images/project_attributes.png">
    </p>
 
-#### Tags
+#### Basic Properties
+You may edit the basic properties of the Project under this accordion - including Name, Abbreviation (shown under the Results tab), Tags, etc.
+
+##### Tags
 You may change the Project Name here.  You may also add an Abbreviation for the Project that will show up in the [Results](./results) overview.  In addition, you may add Tags to your Project.  In general Tags are used to associate things with each other - so that you can search for them later.  For example, if you added a tag named "leather", you might use that on a Location or Question or Project, etc. so that later, when you were trying to find items having to do with "leather", your search would show the items you tagged that way.  The tags are auto-completed after you use them.  So, if you add "leather", then later in a Question you type "lea" - it will autocomplete to leather.  You may also add a Description to your Project for your own use.
 
 {: .important }
-> Tags are currently available for all items, but the search has not been iplemented as of April 15, 2023.  That feature will be added shortly. Sorry for the inconvenience.
+> Tags are currently available for all items, you may search for them in various areas of the product.
 
 After updating any information, you should choose the <span class="inline-butotn">Update</span> button.  If you do not press Update, your changes will not be saved.  
 
-### Project Delete and Archive
+##### Project Delete and Archive
 This page also allows you to Delete or Archive this Project.  You will be prompted to confirm the deletion.  
 
 There are 2 forms of deletion:  
@@ -72,9 +75,52 @@ There are 2 forms of deletion:
 
 2) Archive - where your Project and associated information is marked as Archived and can be viewed by selecting the filter <span class="inline-icon"><i class="fa-solid fa-filter"></i></span> icon on the [Projects](#project-details) list page and choosing Archive.  You may unarchive a Project by editing the Project from the Archived view.
 
+#### Project Notifications
+You may receive Notifications (email or webhook) when certain events happen at the Project level (See [Notifications](./notifications/) for a full description).  You may add Project level Notifications here.  
+
+   <p align="center" class="screen-shot">
+   <img class="image-border" alt="project notifications" src="../../assets/images/project_notifications.png">
+   </p>
+
+As is described in the [Notifications](./notifications/) section, the drop-down menu will show the available Notification types.  The above screenshot shows:
+
+<ul>
+   <li>Notify when (count) reaches limit</li>
+   <li>Repeat notification every (count) votes</li>
+   <li>Notify if (count) (units) since last vote has passed</li>
+</ul>
+
+##### Notify when (count) reaches limit - LIMIT
+
+This 'LIMIT' notification will occur when a certain number of votes/scans has occured at the Project level.  Most of the time, you would use this at the Question or Specific Question at a Specific Location (Question Assignment) level to let you know when, for example, you've received 200 votes for "How was your service today?" at your restaurant.  The count value is the number of votes that will trigger the notification.  You can have the count apply to the Current count or the Accumulated account.  Current counts can be reset to 0 by pressing the recycle button.  Accumulated counts can not be reset and will continue to increase throughout the life of your Project.  To the right of the Current and Accumulated raido buttons are the values at the time you loaded this form.  Below, the Current value is 5 and the Accumulated value is 21.  So, at some point, someone reset the Current value to 0, otherwise, it would also show 21.  You may click the Reset on Notification checkbox if you want the Current count value to be automatically reset to 0 once the Notification is issued.  So, if you set the (count) value to 100, once 100 votes for this Project happen, the Current counter for the Project will be reset to 0 automatically.  So, the notification will trigger again after 100 new votes.  You may also reset the value from a link in the email notification you receive, or, if you are listed as a developer for this Project, you may call the [resetNotificationAggregate](./developer/api.html#reset-current-counter) API to reset the counter after you receive the webhook notification.  Note that you have to press the Save button to save the new notification.
+
+   <p align="center" class="screen-shot">
+   <img class="image-border" alt="project notification limit" src="../../assets/images/project_notif_limit.png">
+   </p>
+
+
+##### Repeat notification every (count) votes - EVERY
+
+The 'EVERY' notification will occur every time the (count) number of votes occur for this project.  This is effectively a way to be notified every (for example) 1,000 votes for this Project.  So, you would be notified at 1000, 2000, 3000, etc.  The Current and Accumulated counters are as describe in the Notifications section and above.
+
+   <p align="center" class="screen-shot">
+   <img class="image-border" alt="project notification repeat" src="../../assets/images/project_notif_repeat.png">
+   </p>
+
+##### Notify if (count) (units) since last vote has passed - DELTATIME
+
+The 'DELTATIME' notification will occur if the (count) number of (units) has passed since the last vote was received. For example, if you want to be notified if there has been 7 days since the last vote was received (prior to this vote), set the (count) value to 7 and the (units) value to days.  This notification will continue to occur every time (count) (units) have passed since the last vote.  Please note that you have to have a 'new' vote to trigger this.  This will not notify you if 7 days have passed since *any* vote has occured; it occurs when a new vote has occured, and you haven't had one for (count) (units) - e.g. 7 days.
+
+   <p align="center" class="screen-shot">
+   <img class="image-border" alt="project notification delta time" src="../../assets/images/project_notif_deltatime.png">
+   </p>
+
+
 ### Locations
 <div class="accordion-bar">Locations</div>
 Locations are used to attach questions to a place.  That may seem odd at first blush, but is is useful to organize your questions.  You must add at least 1 Location to each Project.  If you aren't posting Questions in multiple places, just name your default Location "Default".  If you are posting Questions at a conference, you might use the room number as the Location.  If you are a franchise owner or have multiple business locations, you might use the address or name of each business as the Location.  So, Locations are used as a place to post your Questions.  The Location name can be printed on the resulting PDF file so it is easy to put the Question and Answers in the right place.
+
+Another way to use Locations is to treat a person as a Location.  So, if you have a trucking company and want to know how each of your drivers is driving, make the 'Location' actually be the driver's name and then you can attach Questions to that particular driver.  Keep in mind if you have a lot of drivers you can use the copy/paste functionality to add a long list.  Just add a new Location (below) by pressing the plus sign and then copy a list of names from an Excel column, then paste that list into the single Location box and it will create multiple Locations for you.
 
 #### Add Location
 You may add a new Location by pressing the plus sign Add button.  That will allow you to enter a Location name in the highlighted text box - see below:
@@ -83,7 +129,30 @@ You may add a new Location by pressing the plus sign Add button.  That will allo
    <img class="image-border" alt="add a location" src="../../assets/images/add_location.png">
    </p>
 
-After you add your Location(s), you move on to adding Questions and Answers below.
+After you add your Location(s), you move on to adding Questions and Answers below.  For Questions, Answers and Locations you may [smart paste](#smart-paste-questions-and-answers-from-excel) a list as described elsewhere in this document.
+
+#### Edit Location Details
+To edit the details of the Location or add notifications, press the pencil icon to the left of the Location name.  That will bring up the <span class="inline-accordion">Basic Properties</span> and <span class="inline-accordion">Notifications</span> accordions.  
+
+##### Location Basic Details
+The Basic Properties section will show the name, any tags, description and allow to add a latitude and longitude for this location (assumign it s a Location vs. a person).  You may press the Location icon <span class="inline-icon"><i class="fa-solid fa-location-arrow"></i></span> to have the application automatically use your current location latitude/longitude value as the Location.  After you have assigned a latitude/longitude, you may map that location to verify the coordinates on a map - press the map icon <span class="inline-icon"><i class="fa-solid fa-map"></i></span>.  The latitude/longitude values may be used to help graph your results in the Dashboards or other analytics.
+
+   <p align="center" class="screen-shot">
+   <img class="image-border" alt="edit location details" src="../../assets/images/location_edit.png">
+   </p>
+
+{: .important }
+> If you are using a browser and press the Location icon, you may be asked to allow the app to use your current location.  If you allow the access, then the lat/lon values will be filled in automatically.  In some browsers, you may see an error after you approve the access, press the Location icon again and you should see the values.
+
+##### Location Notifications
+
+Please see the [Notifications](./notifications/) section of this document for complete details on Notifications.  Like Projects, you may receive Notifications at the Location level by adding the Notification to the Location.  So, as you receive varying Question/Answer vote combinations at the chosen Location, the system will generate notifications based on the rules you choose.  Notifications can be received associated with the Project, Campaign, Location, Question, QuestionLocation (assigned question to a specific location) and Answers levels.  For example, if you attach a LIMIT of 200 Notification to the "Chevron station in San Juan" location, then you will be notified when there are 200 votes/answers to the Question(s) you posted at that Location.
+
+   <p align="center" class="screen-shot">
+   <img class="image-border" alt="location notifications" src="../../assets/images/location_notif.png">
+   </p>
+
+The Notification types are the same for all levels (Project, Campaign, Question, etc.).  See the Notifications section or for additional examples, see the [Project Notifications](#project-notifications) section.
 
 ### Questions and Answers
 <div class="accordion-bar">Questions and Answers</div>
