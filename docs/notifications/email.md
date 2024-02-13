@@ -26,7 +26,10 @@ nav_order: 4
 </details>
 </div>
 
-You may receive notifications via Email or webhook. This section describes the Email notification.  However, the contained JSON objects in the email are what are sent directly to your webhook. So, refer to this section for the webhook data format.  The emails just prepend some readable description that you will not get in the webhook.  You may only receive an email notification at the email address you are registered with.  The webhooks go to the URL you proide in the [Webhook Settings](../menu/home_menu.html#webhooks) The person that sets up the Notification is the *only* person that will receive that Notification.
+You may receive notifications via Email or webhook. This section describes the Email notification.  However, the contained JSON objects in the email are what are sent directly to your webhook. So, refer to this section for the webhook data format.  The emails just prepend some readable description that you will not get in the webhook.  You may only receive an email notification at the email address you are registered with.  The webhooks go to the URL you proide in the [Webhook Settings](../menu/home_menu.html#webhooks) The person that sets up the Notification is the *only* person that will receive that email Notification.
+
+{: .warning }
+> If you setup Notifications to email you and there is an excessive number of emails going out to you, we reserve the right to throttle or discontinue emails.  We are under the email rules from Amazon, so are beholden to their policies.  Webhooks are less of an issue, but if we see excessive use, we will contact you to try to arrange something less taxing on our infrastructure.  For example, please don't put Notifiations on every vote received at any level. There is probably a better way to do what you are doing - contact us.
 
 
   <p align="center" class="screen-shot">
