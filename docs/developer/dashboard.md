@@ -28,11 +28,14 @@ nav_order: 3
 
 ## What is a Dashboard?
 
-A Dashboard is URL that can be embedded in an iFrame or used directly in a browser to show real-time results from your Questions/Answers.  Each time someone scans an Answer, the interface will udpate in real-time.  So, if you sent out fliers asking people to vote for which new company logo to use, you could put an iFrame on your main web page and see the real-time votes display in that iFrame.  Or, you can just show the dashbaord as a full web page.  There are many different kinds of graph types and analytics that can be displayed.  Here is a sample Dashboard:
+A Dashboard is a URL that can be embedded in an iFrame or used directly in a browser to show real-time results from your Questions/Answers.  Dashboards will only show "Active" campaigns.  You may not show a Dashboard with a "Draft" or "Inactive" Campaign.  Each time someone scans an Answer, the interface will udpate in real-time.  So, if you sent out fliers asking people to vote for which new company logo to use, you could put an iFrame on your main web page and see the real-time votes display in that iFrame.  Or, you can just show the dashbaord as a full web page.  There are many different kinds of graph types and analytics that can be displayed.  Here is a sample Dashboard:
 
   <p align="center" class="screen-shot">
   <img class="image-border" alt="Sample Dashbaord" src="../../assets/images/sample_dashboard.png">
   </p>
+
+{: .note }
+> If you do not see any data in your Dashboard, make sure you have made your Campaign Active in [Campaign Setup](../projects.html#setup).
 
 
 ## Dashboard Web Interface
