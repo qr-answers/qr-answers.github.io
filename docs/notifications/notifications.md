@@ -3,7 +3,7 @@ title: Notifications
 layout: default
 nav_order: 8
 has_children: true
-permalink: /docs/notifications
+permalink: /docs/notifications/notifications.html
 ---
 
 # Vote Notifications
