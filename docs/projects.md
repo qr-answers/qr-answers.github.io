@@ -76,13 +76,13 @@ There are 2 forms of deletion:
 2) Archive - where your Project and associated information is marked as Archived and can be viewed by selecting the filter <span class="inline-icon"><i class="fa-solid fa-filter"></i></span> icon on the [Projects](#project-details) list page and choosing Archive.  You may unarchive a Project by editing the Project from the Archived view.
 
 #### Project Notifications
-You may receive Notifications (email or webhook) when certain events happen at the Project level (See [Notifications](./notifications/) for a full description).  You may add Project level Notifications here.  
+You may receive Notifications (email or webhook) when certain events happen at the Project level (See [Notifications](./notifications) for a full description).  You may add Project level Notifications here.  
 
    <p align="center" class="screen-shot">
    <img class="image-border" alt="project notifications" src="../../assets/images/project_notifications.png">
    </p>
 
-As is described in the [Notifications](./notifications/) section, the drop-down menu will show the available Notification types.  The above screenshot shows:
+As is described in the [Notifications](./notifications) section, the drop-down menu will show the available Notification types.  The above screenshot shows:
 
 <ul>
    <li>Notify when (count) reaches limit</li>
@@ -146,7 +146,7 @@ The Basic Properties section will show the name, any tags, description and allow
 
 ##### Location Notifications
 
-Please see the [Notifications](./notifications/) section of this document for complete details on Notifications.  Like Projects, you may receive Notifications at the Location level by adding the Notification to the Location.  So, as you receive varying Question/Answer vote combinations at the chosen Location, the system will generate notifications based on the rules you choose.  Notifications can be received associated with the Project, Campaign, Location, Question, QuestionLocation (assigned question to a specific location) and Answers levels.  For example, if you attach a LIMIT of 200 Notification to the "Chevron station in San Juan" location, then you will be notified when there are 200 votes/answers to the Question(s) you posted at that Location.
+Please see the [Notifications](./notifications) section of this document for complete details on Notifications.  Like Projects, you may receive Notifications at the Location level by adding the Notification to the Location.  So, as you receive varying Question/Answer vote combinations at the chosen Location, the system will generate notifications based on the rules you choose.  Notifications can be received associated with the Project, Campaign, Location, Question, QuestionLocation (assigned question to a specific location) and Answers levels.  For example, if you attach a LIMIT of 200 Notification to the "Chevron station in San Juan" location, then you will be notified when there are 200 votes/answers to the Question(s) you posted at that Location.
 
    <p align="center" class="screen-shot">
    <img class="image-border" alt="location notifications" src="../../assets/images/location_notif.png">
